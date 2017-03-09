@@ -97,10 +97,12 @@ string Lista::mostrarLista() {
 		while (aux != NULL) {
 
 			if (getTipo() == "estudiante"){
-				sDato = std::to_string(aux->getEstudiantes());
-			}
-			else {
-				sDato = std::to_string(aux->getDato());
+
+				sDato = aux->getEstudiante();
+
+			}else{
+
+				sDato = aux->getCurso();
 			}
 
 			result += sDato + "\n";

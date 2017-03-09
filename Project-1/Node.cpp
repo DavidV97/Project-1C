@@ -1,6 +1,4 @@
 #include "Node.h"
-//#include "Estudiante.h"
-#include <sstream>
 
 Node::Node(Estudiante estudiante) {
 
@@ -29,9 +27,9 @@ void Node::setEstudiante(Estudiante pestudiante) {
 	estudiante = pestudiante;
 }
 
-Estudiante Node::getEstudiantes(void) {
+string Node::getEstudiante(void) {
 
-	return estudiante;
+	return estudiante.getNomEstudiante();
 }
 
 void Node::setCurso(Curso pcurso) {
@@ -39,7 +37,7 @@ void Node::setCurso(Curso pcurso) {
 	curso = pcurso;
 }
 
-Curso Node::getCurso(void) {
+string Node::getCurso(void) {
 
-	return curso;
+	return curso.getNomCurso();
 }
