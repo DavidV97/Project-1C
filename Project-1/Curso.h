@@ -24,6 +24,8 @@ public:
 	void setDia(string pdia);
 	string getDia();
 
+	/*Holaa Davidcito*/
+
 	
 private:
 	string codigo;
