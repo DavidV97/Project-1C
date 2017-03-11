@@ -7,7 +7,7 @@ void Estudiante::setCodigo(int pcodigo){
 	codigo = pcodigo;
 }
 
-int Estudiante::getCodigo(){
+string Estudiante::getCodigo(){
 	return this->codigo;
 }
 
