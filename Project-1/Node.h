@@ -15,10 +15,10 @@ public:
 	Node* getSig();
 
 	void setEstudiante(Estudiante pestudiante);
-	Estudiante getEstudiantes(void);
+	string getEstudiante(void);
 
 	void setCurso(Curso pcurso);
-	Curso getCurso(void);
+	string getCurso(void);
 
 private:
 	Estudiante estudiante;
