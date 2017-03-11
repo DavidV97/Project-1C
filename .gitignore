@@ -4,3 +4,5 @@
 /.vs/Project-1/v15/.suo
 /.vs/Project-1/v15/ipch/AutoPCH/PROJECT-1-52ccaff/CURSO-8cf60b8d/CURSO.ipch
 /.vs/Project-1/v15
+*.opendb
+*.db
