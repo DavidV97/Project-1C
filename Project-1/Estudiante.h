@@ -10,7 +10,7 @@ class Estudiante{
 public:
 	Estudiante();
 	void setCodigo(int pcodigo);
-	int getCodigo();
+	string getCodigo();
 	void setNomEstudiante(string pnombre);
 	string getNomEstudiante();
 	void setNota(double pnota);
@@ -20,7 +20,7 @@ public:
 	void asigEstado();
 
 private:
-	int codigo;
+	string codigo;
 	string nombre;
 	double nota;
 	string estado;
