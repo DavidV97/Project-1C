@@ -25,6 +25,7 @@ public:
 	string getDia();
 
 	/*Holaa Davidcito*/
+	/*HOLA JOTAPE*/
 
 	
 private:
