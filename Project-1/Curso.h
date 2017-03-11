@@ -26,7 +26,7 @@ public:
 
 	/*Holaa Davidcito*/
 	/*HOLA JOTAPE*/
-	/*Hola a todos <3 */
+	/*Hola a todos <3*/
 
 	
 private:
