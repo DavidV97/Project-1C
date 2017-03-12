@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 void mostarMenu() {
 	cout << "**    Menu    **" << "\n" << endl;
 	cout << "1. Agregar curso" << "\n" << endl;
-	cout << "1. Agregar estudiante" << "\n" << endl;
+	cout << "2. Agregar estudiante" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
 }
 
@@ -57,7 +57,7 @@ bool ejecutarMenu(string opcion) {
 	if (opcion == "1") {
 		obtDatosCurso();
 	}
-	else if (opcion == "0") {
+	else if (opcion == "2") {
 		return false;
 	}else {
 		cout << "Opcion invalida" << "\n" << endl;
