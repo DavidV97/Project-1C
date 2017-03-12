@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 int main(int argc, char** argv) {
 	string opcion;
 	bool noSalir = true;
@@ -22,6 +23,7 @@ int main(int argc, char** argv) {
 void mostarMenu() {
 	cout << "**    Menu    **" << "\n" << endl;
 	cout << "1. Agregar curso" << "\n" << endl;
+	cout << "1. Agregar estudiante" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
 }
 
@@ -76,7 +78,7 @@ void obtDatosCurso() {
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
 
-	Gestor addCurso(codigo, nombre, aula, horario, dia);
+	Gestor::addCurso(codigo,nombre,aula,horario,dia);
 }
 
 string obtHorario() {
