@@ -23,12 +23,9 @@ public:
 	string getHorario();
 	void setDia(string pdia);
 	string getDia();
-
-	/*Holaa Davidcito*/
-
 	
 private:
-	//string codigo;
+	string codigo;
 	string nombre;
 	string aula;
 	Lista estudiantes;
