@@ -1,7 +1,5 @@
 #include "ListaCursos.h"
 
-
-
 ListaCursos::ListaCursos():Lista(){
 }
 

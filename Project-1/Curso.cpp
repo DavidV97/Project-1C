@@ -1,7 +1,6 @@
 #include "Curso.h"
 
-Curso::Curso(){
-}
+Curso::Curso() {}
 
 Curso::Curso(string pcodigo, string pnombre, string paula, string phorario, string pdia){
 	setCodigo(pcodigo);

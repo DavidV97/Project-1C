@@ -1,15 +1,15 @@
-﻿  NodeEstudiante.cpp
-  NodeCurso.cpp
-  Main.cpp
-  ListaEstudiantes.cpp
-  ListaCursos.cpp
-  Lista.cpp
-  Gestor.cpp
-  Estudiante.cpp
+﻿  NodeCurso.cpp
   Curso.cpp
   Generating Code...
   Compiling...
-  Node.cpp
+  ListaCursos.cpp
+  Gestor.cpp
   Generating Code...
+  Skipping... (no relevant changes detected)
+  Node.cpp
+  Lista.cpp
+  Estudiante.cpp
+  Main.cpp
+  LINK : C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\Debug\Project-1.exe not found or not built by the last incremental link; performing full link
   Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\Debug\Project-1.exe
   Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\Debug\Project-1.pdb (Partial PDB)

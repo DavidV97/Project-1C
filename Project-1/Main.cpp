@@ -27,6 +27,7 @@ void mostarMenu() {
 	cout << "1. Agregar curso" << "\n" << endl;
 	cout << "2. Agregar estudiante" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
+	cout << "Seleccione una opcion" << "\n" << endl;
 }
 
 void mostarMenuHorario() {
@@ -34,6 +35,7 @@ void mostarMenuHorario() {
 	cout << "1. Mañana" << "\n" << endl;
 	cout << "2. Tarde" << "\n" << endl;
 	cout << "3. Noche" << "\n" << endl;
+	cout << "Seleccione una opcion" << "\n" << endl;
 }
 
 void mostarMenuDia() {
@@ -44,14 +46,12 @@ void mostarMenuDia() {
 	cout << "4. Jueves" << "\n" << endl;
 	cout << "5. Viernes" << "\n" << endl;
 	cout << "6. Sabado" << "\n" << endl;
+	cout << "Seleccione una opcion" << "\n" << endl;
 }
 
 string leerOp() {
 	string opcion;
-
-	cout << "Seleccione una opcion" << "\n" << endl;
 	cin >> opcion;
-
 	return opcion;
 }
 
@@ -61,7 +61,7 @@ bool ejecutarMenu(string opcion) {
 	if (opcion == "1") {
 		obtDatosCurso();
 	}
-	else if (opcion == "2") {
+	else if (opcion == "0") {
 		return false;
 	}
 	else {
@@ -86,13 +86,9 @@ void obtDatosCurso() {
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
 
-<<<<<<< HEAD
-	Gestor::addCurso(codigo,nombre,aula,horario,dia);
-=======
 	Gestor::addCurso(codigo, nombre, aula, horario, dia);
 
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;
->>>>>>> devDavid
 }
 
 string obtHorario() {
