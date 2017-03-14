@@ -1,59 +1,15 @@
-﻿  Node.cpp
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(13): error C2143: syntax error: missing ';' before '*'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(13): error C2238: unexpected token(s) preceding ';'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(28): error C2061: syntax error: identifier 'Node'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(29): error C2143: syntax error: missing ';' before '*'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(29): error C2238: unexpected token(s) preceding ';'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(39): error C2061: syntax error: identifier 'Estudiante'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(40): error C2061: syntax error: identifier 'Curso'
+﻿  NodeEstudiante.cpp
+  NodeCurso.cpp
   Main.cpp
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(20): error C2061: syntax error: identifier 'Lista'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C3646: 'getEstudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2059: syntax error: '('
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2238: unexpected token(s) preceding ';'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C3646: 'estudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(12): error C3861: 'mostarMenu': identifier not found
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(13): error C3861: 'leerOp': identifier not found
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(14): error C3861: 'ejecutarMenu': identifier not found
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(56): error C3861: 'obtDatosCurso': identifier not found
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(75): error C3861: 'obtHorario': identifier not found
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(77): error C3861: 'obtDia': identifier not found
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\main.cpp(79): error C2661: 'Gestor::Gestor': no overloaded function takes 5 arguments
+  ListaEstudiantes.cpp
+  ListaCursos.cpp
   Lista.cpp
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(20): error C2061: syntax error: identifier 'Lista'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C3646: 'getEstudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2059: syntax error: '('
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2238: unexpected token(s) preceding ';'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C3646: 'estudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.cpp(134): error C2039: 'getDato': is not a member of 'Node'
-  c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(8): note: see declaration of 'Node'
   Gestor.cpp
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(20): error C2061: syntax error: identifier 'Lista'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C3646: 'getEstudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2059: syntax error: '('
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2238: unexpected token(s) preceding ';'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C3646: 'estudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Estudiante.cpp
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(20): error C2061: syntax error: identifier 'Lista'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C3646: 'getEstudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2059: syntax error: '('
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(21): error C2238: unexpected token(s) preceding ';'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C3646: 'estudiantes': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\curso.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(11): error C2061: syntax error: identifier 'Estudiante'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(17): error C2061: syntax error: identifier 'Estudiante'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(24): error C3646: 'estudiante': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(39): error C2061: syntax error: identifier 'Estudiante'
   Curso.cpp
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(12): error C2061: syntax error: identifier 'Curso'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(20): error C2061: syntax error: identifier 'Curso'
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(25): error C3646: 'curso': unknown override specifier
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\node.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\david\documents\visual studio 2017\projects\project-1\project-1\lista.h(40): error C2061: syntax error: identifier 'Curso'
   Generating Code...
+  Compiling...
+  Node.cpp
+  Generating Code...
+  Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\Debug\Project-1.exe
+  Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\Debug\Project-1.pdb (Partial PDB)

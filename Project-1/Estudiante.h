@@ -13,17 +13,17 @@ public:
 	int getCodigo();
 	void setNomEstudiante(string pnombre);
 	string getNomEstudiante();
-	void setNota(double pnota);
-	double getNota();
-	void setEstado(string pestado);
-	string getEstado();
+	//void setNota(double pnota);
+	//double getNota();
+	//void setEstado(string pestado);
+	//string getEstado();
 	void asigEstado();
 
 private:
 	int codigo;
 	string nombre;
-	double nota;
-	string estado;
+	//double nota;
+	//string estado;
 };
 
 #endif // !ESTUDIANTE_H
