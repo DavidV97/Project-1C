@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+".vs" 
+=======
 ".vs/*" 
+<<<<<<< HEAD
 /.vs/Project-1/v15/Browse.VC.opendb
 /.vs/Project-1/v15/Browse.VC.db
 /.vs/Project-1/v15/.suo
@@ -6,3 +11,9 @@
 /.vs/Project-1/v15
 *.opendb
 *.db
+=======
+>>>>>>> devDavid
+=======
+".vs/*" 
+>>>>>>> de5d75703519891d7b79ec0fda912786e7dcc910
+>>>>>>> devDavid

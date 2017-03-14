@@ -6,17 +6,19 @@ using namespace std;
 
 
 int main(int argc, char** argv) {
+	void mostarMenu();
+	string leerOp();
+	bool ejecutarMenu(string opcion);
+
 	string opcion;
 	bool noSalir = true;
 
 	while (noSalir) {
 		mostarMenu();
 		opcion = leerOp();
-		ejecutarMenu(opcion);
+		noSalir = ejecutarMenu(opcion);
 	}
 
-	Gestor addCurso();
-	
 	return 0;
 }
 
@@ -45,7 +47,7 @@ void mostarMenuDia() {
 }
 
 string leerOp() {
-	string opcion; 
+	string opcion;
 
 	cout << "Seleccione una opcion" << "\n" << endl;
 	cin >> opcion;
@@ -54,18 +56,24 @@ string leerOp() {
 }
 
 bool ejecutarMenu(string opcion) {
+	void obtDatosCurso();
+
 	if (opcion == "1") {
 		obtDatosCurso();
 	}
 	else if (opcion == "2") {
 		return false;
-	}else {
+	}
+	else {
 		cout << "Opcion invalida" << "\n" << endl;
 	}
+	return true;
 }
 
 void obtDatosCurso() {
 	string codigo, nombre, aula, horario, dia;
+
+	string obtHorario(), obtDia();
 
 	cout << "Codigo del curso" << "\n" << endl;
 	cin >> codigo;
@@ -78,13 +86,20 @@ void obtDatosCurso() {
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
 
+<<<<<<< HEAD
 	Gestor::addCurso(codigo,nombre,aula,horario,dia);
+=======
+	Gestor::addCurso(codigo, nombre, aula, horario, dia);
+
+	cout << "Curso agregado de manera exitosa" << "\n" << endl;
+>>>>>>> devDavid
 }
 
 string obtHorario() {
 	string opcion, horario;
+	void mostarMenuHorario();
 
-	while (true){
+	while (true) {
 
 		mostarMenuHorario();
 		opcion = leerOp();
@@ -92,10 +107,12 @@ string obtHorario() {
 		if (opcion == "1") {
 			horario = "mañana";
 			break;
-		}else if (opcion == "2") {
+		}
+		else if (opcion == "2") {
 			horario = "tarde";
 			break;
-		}else if (opcion == "3") {
+		}
+		else if (opcion == "3") {
 			horario = "noche";
 			break;
 		}
@@ -109,6 +126,7 @@ string obtHorario() {
 
 string obtDia() {
 	string opcion, dia;
+	void mostrarMenuDia();
 
 	while (true) {
 
@@ -118,19 +136,24 @@ string obtDia() {
 		if (opcion == "1") {
 			dia = "lunes";
 			break;
-		}else if (opcion == "2") {
+		}
+		else if (opcion == "2") {
 			dia = "martes";
 			break;
-		}else if (opcion == "3") {
+		}
+		else if (opcion == "3") {
 			dia = "miercoles";
 			break;
-		}else if (opcion == "4") {
+		}
+		else if (opcion == "4") {
 			dia = "jueves";
 			break;
-		}else if (opcion == "5") {
+		}
+		else if (opcion == "5") {
 			dia = "viernes";
 			break;
-		}else if (opcion == "6") {
+		}
+		else if (opcion == "6") {
 			dia = "sabado";
 			break;
 		}

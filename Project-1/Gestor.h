@@ -1,7 +1,8 @@
 #ifndef GESTOR_H
 #define GESTOR_H
 
-#include "Lista.h"
+#include "ListaCursos.h"
+#include "ListaEstudiantes.h"
 #include <iostream>
 #include <string>
 

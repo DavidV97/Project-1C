@@ -23,6 +23,7 @@ public:
 	string getHorario();
 	void setDia(string pdia);
 	string getDia();
+<<<<<<< HEAD
 
 	/*Holaa Davidcito*/
 	/*aqui*//*DAVID*/
@@ -31,6 +32,8 @@ public:
 	/*HOLA JOTAPE*/
 	/*Hola a todos <3 */
 
+=======
+>>>>>>> devDavid
 	
 private:
 	string codigo;

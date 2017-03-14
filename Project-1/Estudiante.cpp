@@ -19,7 +19,7 @@ string Estudiante::getNomEstudiante() {
 	return this->nombre;
 }
 
-void Estudiante::setNota(double pnota) {
+/*void Estudiante::setNota(double pnota) {
 	nota = pnota;
 	asigEstado();
 }
@@ -52,5 +52,5 @@ void Estudiante::asigEstado(){
 
 		setEstado("reprobado");
 	}
-}
+}*/
 
