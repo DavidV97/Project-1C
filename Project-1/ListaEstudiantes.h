@@ -9,12 +9,12 @@ class ListaEstudiantes{
 public:
 	ListaEstudiantes();
 	void setLongitud();
-	int getLength() const;
-	void setHead(NodeEstudiante *);
-	NodeEstudiante *getHead() const;
-	void addEstudiante(Estudiante pestudiante);
+	int getLongitud() const;
+	void setCabeza(NodeEstudiante *);
+	NodeEstudiante *getCabeza() const;
+	void agregarEstudiante(Estudiante pestudiante);
 private:
 	int longitud;
-	NodeEstudiante *head;
+	NodeEstudiante *cabeza;
 };
 #endif // !LISTAESTUDIANTES_H
