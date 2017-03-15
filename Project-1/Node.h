@@ -9,6 +9,7 @@ public:
 	Node* getSig();
 protected:
 	Node* sig;
+
 };
 
 #endif // !NODE_H

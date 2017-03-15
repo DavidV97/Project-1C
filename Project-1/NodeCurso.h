@@ -8,10 +8,11 @@ using namespace std;
 
 class NodeCurso : public Node{
 public:
-	NodeCurso(Curso curso);
-	void setCurso(Curso pcurso);
+	typedef Node super;
+	NodeCurso(Curso* curso);
+	void setCurso(Curso* pcurso);
 	string getCurso(void);
 private:
-	Curso curso;
+	Curso* curso;
 };
 #endif // !NODECURSO_H

@@ -23,6 +23,7 @@ public:
 	string getHorario();
 	void setDia(string pdia);
 	string getDia();
+	bool esvacio();
 	
 private:
 	string codigo;
