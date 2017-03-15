@@ -27,7 +27,9 @@ void ListaEstudiantes::agregarEstudiante(Estudiante pestudiante) {
 
 	if (this->cabeza == NULL) {
 		setCabeza(node);
+	
 	}
+
 	else {
 		node->setSig(cabeza);
 		setCabeza(node);
