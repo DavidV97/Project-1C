@@ -1,19 +1,23 @@
 #ifndef LISTACURSOS_H
 #define LISTACURSOS_H
 
-#include "Lista.h"
 #include "NodeCurso.h"
 #include<iostream>
 using namespace std;
 
-class ListaCursos : public Lista{
+class ListaCursos{
 public:
 	ListaCursos();
-	typedef ListaCursos super;
+	void setLongitud();
+	int getLength() const;
+	void setHead(NodeCurso *);
+	NodeCurso *getHead() const;
 	void addCurso(Curso pcurso);
 	bool cursoVacio();
 	string mostrarCurso();
 	string buscarCurso(int pcodigo);
-
+private:
+	int longitud;
+	NodeCurso *head;
 };
 #endif // !LISTACURSOS_H

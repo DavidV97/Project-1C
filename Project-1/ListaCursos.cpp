@@ -1,7 +1,25 @@
 #include "ListaCursos.h"
 #include "NodeCurso.h"
 
-ListaCursos::ListaCursos():Lista(){
+ListaCursos::ListaCursos(){
+	longitud = 0;
+	head = NULL;
+}
+
+void ListaCursos::setLongitud() {
+	longitud++;
+}
+
+int ListaCursos::getLength() const {
+	return longitud;
+}
+
+void ListaCursos::setHead(NodeCurso *phead) {
+	head = phead;
+}
+
+NodeCurso * ListaCursos::getHead() const {
+	return head;
 }
 
 void ListaCursos::addCurso(Curso pcurso) {
@@ -27,12 +45,12 @@ bool ListaCursos::cursoVacio() {
 string ListaCursos::mostrarCurso() {
 	string resul = "";
 	NodeCurso* auxCurso;
-	auxCurso = Lista::head;
+	auxCurso = head;
 	if (cursoVacio() == NULL) {
 		resul = "No hay cursos agregados, por favor ve y crea uno";
 	}else {
-		while (aux != NULL) {
+		/*while (auxCurso != NULL) {
 			resul += 
-		}
+		}*/
 	}
 }

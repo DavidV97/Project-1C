@@ -1,17 +1,19 @@
 #ifndef NODOESTUDIANTE_H
 #define NODOESTUDIANTE_H
 
-#include "Node.h"
 #include "Estudiante.h"
 #include<iostream>
 using namespace std;
 
-class NodeEstudiante : public Node {
+class NodeEstudiante{
 public:
-	NodeEstudiante(Estudiante estudiante);
-	void setEstudiante(Estudiante pestudiante);
-	string getEstudiante(void);
+	NodeEstudiante(Estudiante pEstudiante);
+	void setSig(NodeEstudiante*);
+	NodeEstudiante* getSig();
+	void setEstudiante(Estudiante pEstudiante);
+	Estudiante getEstudiante(void);
 private:
+	NodeEstudiante* sig;
 	Estudiante estudiante;
 };
 #endif // !NODOESTUDIANTE_H

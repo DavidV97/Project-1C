@@ -114,10 +114,8 @@
     <ClInclude Include="Curso.h" />
     <ClInclude Include="Estudiante.h" />
     <ClInclude Include="Gestor.h" />
-    <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaCursos.h" />
     <ClInclude Include="ListaEstudiantes.h" />
-    <ClInclude Include="Node.h" />
     <ClInclude Include="NodeCurso.h" />
     <ClInclude Include="NodeEstudiante.h" />
     <ClInclude Include="NodeEstXCurso.h" />
@@ -127,11 +125,9 @@
     <ClCompile Include="Curso.cpp" />
     <ClCompile Include="Estudiante.cpp" />
     <ClCompile Include="Gestor.cpp" />
-    <ClCompile Include="Lista.cpp" />
     <ClCompile Include="ListaCursos.cpp" />
     <ClCompile Include="ListaEstudiantes.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeCurso.cpp" />
     <ClCompile Include="NodeEstudiante.cpp" />
     <ClCompile Include="NodeEstXCurso.cpp" />

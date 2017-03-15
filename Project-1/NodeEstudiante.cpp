@@ -4,12 +4,20 @@ NodeEstudiante::NodeEstudiante(Estudiante pEstudiante){
 	setEstudiante(pEstudiante);
 }
 
-void NodeEstudiante::setEstudiante(Estudiante pestudiante) {
-
-	estudiante = pestudiante;
+void NodeEstudiante::setSig(NodeEstudiante *psig) {
+	sig = psig;
 }
 
-string NodeEstudiante::getEstudiante(void) {
+NodeEstudiante * NodeEstudiante::getSig() {
+	return sig;
+}
 
-	return estudiante.getNomEstudiante();
+void NodeEstudiante::setEstudiante(Estudiante pEstudiante) {
+
+	estudiante = pEstudiante;
+}
+
+Estudiante NodeEstudiante::getEstudiante(void) {
+
+	return estudiante;
 }
