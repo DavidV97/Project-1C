@@ -34,13 +34,13 @@ string Curso::getAula() {
 	return this->aula;
 }
 
-void Curso::setEstudiantes(Lista pestudiantes){
+/*void Curso::setEstudiantes(Lista pestudiantes){
 	estudiantes = pestudiantes;
 }
 
 Lista Curso::getEstudiantes(){
 	return this->estudiantes;
-}
+}*/
 
 void Curso::setHorario(string phorario) {
 	horario = phorario;

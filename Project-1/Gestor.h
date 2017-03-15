@@ -13,7 +13,6 @@ class Gestor
 public:
 	Gestor();
 	static void addCurso(string codigo, string nombre, string aula, string horario, string dia);
-	NodeCurso curso
 };
 
 #endif // !GESTOR_H

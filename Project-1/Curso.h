@@ -2,7 +2,6 @@
 #define CURSO_H
 #include <iostream>
 #include <string>
-#include "Lista.h"
 
 using namespace std;
 
@@ -17,8 +16,8 @@ public:
 	string getNomCurso();
 	void setAula(string paula);
 	string getAula();
-	void setEstudiantes(Lista pestudiantes);
-	Lista getEstudiantes();
+	//void setEstudiantes(Lista pestudiantes);
+	//Lista getEstudiantes();
 	void setHorario(string phorario);
 	string getHorario();
 	void setDia(string pdia);
@@ -29,7 +28,7 @@ private:
 	string codigo;
 	string nombre;
 	string aula;
-	Lista estudiantes;
+	//Lista estudiantes;
 	string horario;
 	string dia;
 

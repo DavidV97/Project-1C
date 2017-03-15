@@ -53,4 +53,5 @@ string ListaCursos::mostrarCurso() {
 			resul += 
 		}*/
 	}
+	return resul;
 }

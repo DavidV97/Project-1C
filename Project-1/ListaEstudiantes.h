@@ -13,9 +13,6 @@ public:
 	void setHead(NodeEstudiante *);
 	NodeEstudiante *getHead() const;
 	void addEstudiante(Estudiante pestudiante);
-	bool cursoVacio();
-	string mostrarCurso();
-	string buscarCurso(int pcodigo);
 private:
 	int longitud;
 	NodeEstudiante *head;
