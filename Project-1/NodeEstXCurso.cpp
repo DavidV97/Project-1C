@@ -2,11 +2,9 @@
 
 
 
-NodeEstXCurso::NodeEstXCurso()
-{
+NodeEstXCurso::NodeEstXCurso(){
 }
 
 
-NodeEstXCurso::~NodeEstXCurso()
-{
+NodeEstXCurso::~NodeEstXCurso(){
 }
