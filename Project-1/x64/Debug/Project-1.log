@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 ﻿  Gestor.cpp
   Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\x64\Debug\Project-1.exe
   Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\x64\Debug\Project-1.pdb (Partial PDB)
+=======
+﻿  Main.cpp
+  Gestor.cpp
+  Generating Code...
+  Project-1.vcxproj -> C:\Users\josep\Desktop\proyecto\Project-1C\x64\Debug\Project-1.exe
+  Project-1.vcxproj -> C:\Users\josep\Desktop\proyecto\Project-1C\x64\Debug\Project-1.pdb (Partial PDB)
+>>>>>>> f184c8113968c0f307f61436456c66442597bc7a
