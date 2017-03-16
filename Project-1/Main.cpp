@@ -65,15 +65,20 @@ string leerOp() {
 }
 
 bool ejecutarMenu(string opcion) {
+	string estudianteNombre;
 	void obtDatosCurso();
+	void agregarEstudiante();
 	void matricularEst();
 	void mostrarCurso();
 	void buscarCurso();
 
 	if (opcion == "1") {
 		obtDatosCurso();
+
 	}else if (opcion == "2") {
-		
+		estudianteNombre=obtenerDatosEstudiante();
+		agregarEstudiante(estudianteNombre);
+
 	}else if (opcion == "3") {
 		matricularEst();
 	}
@@ -217,3 +222,19 @@ void buscarCurso() {
 	}
 	
 }
+
+string obtenerDatosEstudiante() {
+
+	string nombreEstudiante;
+	
+	try {
+		cout << "Digite el codigo del curso que quiere matricular" << "\n" << endl;
+		cin >> nombreEstudiante;
+
+		return nombreEstudiante;
+	}catch (std::string *atrapada) {
+		 std::cout << "Got " << atrapada << std::endl;
+	}
+}
+
+

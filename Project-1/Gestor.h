@@ -20,6 +20,7 @@ public:
 	 bool verificarSiHayCursos();
 	 string mostrarEstudiantes();
 	 string matricular(string pCodigoCurso, string pCodigoEst);
+	 string agregarEstudiante(string pNombreEstudiante);
 	 
 private :
 	 Curso curso = Curso::Curso();

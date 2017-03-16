@@ -56,3 +56,10 @@ string Gestor::generateStrMatricula(Curso curso, Estudiante estudiante) {
 	result += estudiante.toString();
 	return result;
 }
+
+string Gestor::agregarEstudiante(string pestudiante) {
+
+
+
+	return NULL;
+}
