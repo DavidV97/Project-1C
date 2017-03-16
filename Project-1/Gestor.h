@@ -19,6 +19,7 @@ private :
 	 Curso curso = Curso::Curso();
 	 ListaCursos listaCursos = ListaCursos::ListaCursos();
 
+
 };
 
 #endif // !GESTOR_H
