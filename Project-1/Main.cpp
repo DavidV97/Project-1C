@@ -97,7 +97,6 @@ void obtDatosCurso() {
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
 	gestor.addCurso(codigo, nombre, aula, horario, dia);
-	gestor.addCurso(codigo, nombre, aula, horario, dia);
 	string resul = gestor.mostrarCursos();
 	cout << resul << endl;
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;

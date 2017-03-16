@@ -19,6 +19,8 @@ private:
 	static const int autoGenerate = 0;
 	string codigo;
 	string nombre;
+
+
 };
 
 #endif // !ESTUDIANTE_H
