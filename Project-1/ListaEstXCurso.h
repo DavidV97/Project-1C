@@ -23,5 +23,6 @@ private:
 	int length;
 	NodeEstXCurso *head;
 };
+
 #endif // !LISTAESTUDIANTES_H
 
