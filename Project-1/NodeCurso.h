@@ -12,7 +12,7 @@ public:
 	NodeCurso* getSig();
 	void setCurso(Curso pcurso);
 	Curso getCurso(void);
-
+	string toString();
 private:
 	NodeCurso* sig;
 	Curso curso;

@@ -3,9 +3,14 @@
 #include "Gestor.h"
 
 using namespace std;
+Gestor gestor;
 
-
+  void initGestores() {
+	  gestor = Gestor::Gestor();
+  }
 int main(int argc, char** argv) {
+	
+	initGestores();
 	void mostarMenu();
 	string leerOp();
 	bool ejecutarMenu(string opcion);
@@ -18,7 +23,7 @@ int main(int argc, char** argv) {
 		opcion = leerOp();
 		noSalir = ejecutarMenu(opcion);
 	}
-
+	
 	return 0;
 }
 
@@ -85,10 +90,12 @@ void obtDatosCurso() {
 	horario = obtHorario();
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
-
-	Gestor::addCurso(codigo, nombre, aula, horario, dia);
-
+	gestor.addCurso(codigo, nombre, aula, horario, dia);
+	gestor.addCurso(codigo, nombre, aula, horario, dia);
+	string resul = gestor.mostrarCursos();
+	cout << resul << endl;
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;
+	
 }
 
 string obtHorario() {
