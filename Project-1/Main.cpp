@@ -33,6 +33,8 @@ void mostarMenu() {
 	cout << "1. Agregar curso" << "\n" << endl;
 	cout << "2. Agregar estudiante" << "\n" << endl;
 	cout << "3. Matricular estudiante" << "\n" << endl;
+	cout << "4. Mostrar cursos" << "\n" << endl;
+	cout << "5. Buscar Curso" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
 	cout << "Seleccione una opcion" << "\n" << endl;
 }
@@ -65,6 +67,8 @@ string leerOp() {
 bool ejecutarMenu(string opcion) {
 	void obtDatosCurso();
 	void matricularEst();
+	void mostrarCurso();
+	void buscarCurso();
 
 	if (opcion == "1") {
 		obtDatosCurso();
@@ -72,7 +76,14 @@ bool ejecutarMenu(string opcion) {
 		
 	}else if (opcion == "3") {
 		matricularEst();
-	}else if (opcion == "0") {
+	}
+	else if (opcion == "4") {
+		mostrarCurso();
+	}
+	else if (opcion == "5") {
+		buscarCurso();
+	}
+	else if (opcion == "0") {
 		return false;
 	}
 	else {
@@ -97,8 +108,6 @@ void obtDatosCurso() {
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
 	gestor.addCurso(codigo, nombre, aula, horario, dia);
-	string resul = gestor.mostrarCursos();
-	cout << resul << endl;
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;
 	
 }
@@ -184,4 +193,27 @@ void matricularEst() {
 	cin >> codigoEst;
 
 	cout << gestor.matricular(codigoCurso, codigoEst) << endl;
+}
+void mostrarCurso() {
+	if (!gestor.verificarSiHayCursos()) {
+		cout << gestor.mostrarCursos() << endl;
+	}
+	else {
+		cout << "No existen cursos agregados" << endl;
+	}
+	
+}
+void buscarCurso() {
+	string codigo;
+	
+	if (!gestor.verificarSiHayCursos()) {
+		cout << gestor.mostrarCursos() << endl;
+		cout << "Ingrese el codigo del curso: " << endl;
+		cin >> codigo;
+		cout << gestor.buscarInfoCurso(codigo) << endl;
+	}
+	else {
+		cout << "No existen cursos agregados" << endl;
+	}
+	
 }

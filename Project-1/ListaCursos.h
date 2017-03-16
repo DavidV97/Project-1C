@@ -15,6 +15,9 @@ public:
 	void addCurso(Curso pcurso);
 	bool cursoVacio();
 	string mostrarCursos();
+	string buscarInfoDelCurso(string pcodigo);
+	Curso buscarCurso(string pcodigo);
+	bool seEncuentraCurso(string pcodigo);
 private:
 	int longitud;
 	NodeCurso *head;

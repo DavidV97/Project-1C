@@ -15,8 +15,12 @@ public:
 	 Gestor();
 	 void addCurso(string codigo, string nombre, string aula, string horario, string dia);
 	 string mostrarCursos();
+	 string buscarInfoCurso(string pcodigo);
+	 void buscarCurso(string pcodigo);
+	 bool verificarSiHayCursos();
 	 string mostrarEstudiantes();
 	 string matricular(string pCodigoCurso, string pCodigoEst);
+	 
 private :
 	 Curso curso = Curso::Curso();
 	 ListaCursos listaCursos;

@@ -10,6 +10,19 @@ void Gestor::addCurso(string codigo, string nombre, string aula, string horario,
 string Gestor::mostrarCursos() {
 	return listaCursos.mostrarCursos();
 }
+string Gestor::buscarInfoCurso(string pcodigo) {
+	return listaCursos.buscarInfoDelCurso(pcodigo);
+}
+void Gestor::buscarCurso(string pcodigo) {
+	bool resul = listaCursos.seEncuentraCurso(pcodigo);
+	if (resul) {
+		Curso curso = listaCursos.buscarCurso(pcodigo);
+	}
+	
+}
+bool Gestor::verificarSiHayCursos() {
+	return listaCursos.cursoVacio();
+}
 
 string Gestor::mostrarEstudiantes() {
 	//listaEstudiantes.mostrarEstudiantes();
