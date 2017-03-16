@@ -25,6 +25,7 @@ private :
 	 Curso curso = Curso::Curso();
 	 ListaCursos listaCursos;
 	 ListaEstudiantes listaEstudiantes;
+	 string generateStrMatricula(Curso curso, Estudiante estudiante);
 };
 
 #endif // !GESTOR_H

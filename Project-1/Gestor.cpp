@@ -30,11 +30,29 @@ string Gestor::mostrarEstudiantes() {
 }
 
 string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
-	//Curso curso = listaCursos.buscarCurso();
-	//ListaEstXCurso estXCurso = curso.getEstudiantes();
-	//Estudiante estudiante = listaEstudiantes.buscarEstudiante();
-	//Estudiante *PtrEst = &estudiente;
-	//estXCurso.addEstudiante(*PtrEst);
+	string result;
+	if (listaCursos.seEncuentraCurso(pCodigoCurso)) {
+		Curso curso = listaCursos.buscarCurso(pCodigoCurso);
+		ListaEstXCurso estXCurso = curso.getEstudiantes();
+		//Estudiante estudiante = listaEstudiantes.buscarEstudiante();
+		//Estudiante *PtrEst = &estudiente;
+		//estXCurso.addEstudiante(*PtrEst);
+		//result = generateStrMatricula(curso, estudiante);
+		//result += estudiante.toString();
+
+	}else {
+		result = "El codigo digitado no corresponde a ningun curso";
+	}
 	
-	return string();
+	return result;
+}
+
+string Gestor::generateStrMatricula(Curso curso, Estudiante estudiante) {
+	string result;
+	result = "Matricula exitosa \n";
+	result += "-Detalles del curso: \n";
+	result += curso.toString();
+	result += "-Detalles del estudiante: \n";
+	result += estudiante.toString();
+	return result;
 }

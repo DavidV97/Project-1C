@@ -29,7 +29,7 @@ string Estudiante::getNomEstudiante() {
 
 string Estudiante::toString(){
 	string result = getCodigo() + "\n";
-	result = getNomEstudiante() + "\n";
+	result += getNomEstudiante() + "\n";
 	return result;
 }
 
