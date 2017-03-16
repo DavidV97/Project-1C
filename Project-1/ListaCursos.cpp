@@ -52,7 +52,7 @@ string ListaCursos::mostrarCursos() {
 		resul = "No hay cursos agregados, por favor ve y crea uno";
 	}else {
 		while (auxCurso != NULL) {
-			resul += auxCurso->toString();
+			resul += auxCurso->toString() + "\n";
 			auxCurso = auxCurso->getSig();
 		}
 	}
