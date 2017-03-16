@@ -31,6 +31,7 @@ void mostarMenu() {
 	cout << "**    Menu    **" << "\n" << endl;
 	cout << "1. Agregar curso" << "\n" << endl;
 	cout << "2. Agregar estudiante" << "\n" << endl;
+	cout << "3. Matricular estudiante" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
 	cout << "Seleccione una opcion" << "\n" << endl;
 }
@@ -62,11 +63,15 @@ string leerOp() {
 
 bool ejecutarMenu(string opcion) {
 	void obtDatosCurso();
+	void matricularEst();
 
 	if (opcion == "1") {
 		obtDatosCurso();
-	}
-	else if (opcion == "0") {
+	}else if (opcion == "2") {
+		
+	}else if (opcion == "3") {
+		matricularEst();
+	}else if (opcion == "0") {
 		return false;
 	}
 	else {
@@ -166,4 +171,11 @@ string obtDia() {
 	}
 
 	return dia;
+}
+
+void matricularEst() {
+	Curso curso = Gestor::mostrarCursos();
+	Estudiante estudiente = Gestor::mostrarEstudiantes();
+	Curso *PtrCurso = &curso;
+	Estudiante *PtrEst = &estudiente;
 }

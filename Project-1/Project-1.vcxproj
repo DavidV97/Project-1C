@@ -116,6 +116,7 @@
     <ClInclude Include="Gestor.h" />
     <ClInclude Include="ListaCursos.h" />
     <ClInclude Include="ListaEstudiantes.h" />
+    <ClInclude Include="ListaEstXCurso.h" />
     <ClInclude Include="NodeCurso.h" />
     <ClInclude Include="NodeEstudiante.h" />
     <ClInclude Include="NodeEstXCurso.h" />
@@ -127,6 +128,7 @@
     <ClCompile Include="Gestor.cpp" />
     <ClCompile Include="ListaCursos.cpp" />
     <ClCompile Include="ListaEstudiantes.cpp" />
+    <ClCompile Include="ListaEstXCurso.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NodeCurso.cpp" />
     <ClCompile Include="NodeEstudiante.cpp" />
