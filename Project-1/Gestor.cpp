@@ -12,13 +12,16 @@ string Gestor::mostrarCursos() {
 }
 
 string Gestor::mostrarEstudiantes() {
-	//listaEsrudiantes.getLength();
+	//listaEstudiantes.mostrarEstudiantes();
 	return string();
 }
 
 string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
-
-	//Curso *PtrCurso = &curso;
+	//Curso curso = listaCursos.buscarCurso();
+	//ListaEstXCurso estXCurso = curso.getEstudiantes();
+	//Estudiante estudiante = listaEstudiantes.buscarEstudiante();
 	//Estudiante *PtrEst = &estudiente;
+	//estXCurso.addEstudiante(*PtrEst);
+	
 	return string();
 }

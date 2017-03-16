@@ -3,6 +3,7 @@
 
 #include "ListaCursos.h"
 #include "ListaEstudiantes.h"
+#include "ListaEstXCurso.h"
 #include "NodeCurso.h"
 #include <iostream>
 #include <string>
