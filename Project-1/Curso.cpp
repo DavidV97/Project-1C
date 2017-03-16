@@ -55,10 +55,10 @@ string Curso::getDia() {
 }
 
 string Curso::toString(){
-	string result = codigo + "\n";
-	result = nombre + "\n";
-	result = aula + "\n";
-	result = horario + "\n";
-	result = dia + "\n";
+	string result = getCodigo() + "\n";
+	result = getNomCurso() + "\n";
+	result = getAula() + "\n";
+	result = getHorario() + "\n";
+	result = getDia() + "\n";
 	return result;
 }

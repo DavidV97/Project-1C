@@ -7,9 +7,7 @@ void Gestor::addCurso(string codigo, string nombre, string aula, string horario,
 }
 
 string Gestor::mostrarCursos() {
-	//string result = listaCurso.mostrarCursos();
-	//return result;
-	return string();
+	return listaCursos.mostrarCursos();
 }
 
 string Gestor::mostrarEstudiantes() {

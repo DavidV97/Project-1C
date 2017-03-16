@@ -28,8 +28,8 @@ string Estudiante::getNomEstudiante() {
 }
 
 string Estudiante::toString(){
-	string result = codigo + "\n";
-	result = nombre + "\n";
+	string result = getCodigo() + "\n";
+	result = getNomEstudiante() + "\n";
 	return result;
 }
 

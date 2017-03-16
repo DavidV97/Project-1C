@@ -1,5 +1,8 @@
 #include "ListaCursos.h"
 #include "NodeCurso.h"
+#include <sstream>
+#include <iostream>
+using namespace std;
 
 ListaCursos::ListaCursos(){
 	longitud = 0;
@@ -26,14 +29,13 @@ void ListaCursos::addCurso(Curso pcurso) {
 
 	NodeCurso* node = new NodeCurso(pcurso);
 
-	if (cursoVacio() == NULL) {
+	if (cursoVacio()) {
 		setHead(node);
 	}
 	else {
 		node->setSig(head);
 		setHead(node);
 	}
-
 	this->setLongitud();
 }
 bool ListaCursos::cursoVacio() {
@@ -45,13 +47,14 @@ bool ListaCursos::cursoVacio() {
 string ListaCursos::mostrarCursos() {
 	string resul = "";
 	NodeCurso* auxCurso;
-	auxCurso = head;
-	if (cursoVacio() == NULL) {
+	auxCurso = this->head;
+	if (cursoVacio()) {
 		resul = "No hay cursos agregados, por favor ve y crea uno";
 	}else {
-		/*while (auxCurso != NULL) {
-			resul += 
-		}*/
+		while (auxCurso != NULL) {
+			resul += auxCurso->toString();
+			auxCurso = auxCurso->getSig();
+		}
 	}
 	return resul;
 }
