@@ -38,3 +38,11 @@ string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
 	
 	return string();
 }
+
+string Gestor::agregarEstudiante(string pestudiante) {
+
+
+
+	return NULL;
+}
+
