@@ -7,3 +7,10 @@ void Gestor::addCurso(string codigo, string nombre, string aula, string horario,
 	Curso curso(codigo, nombre, aula, horario,dia);
 }
 
+Curso Gestor::mostrarCursos() {
+	listaCurso.mostrarCurso();
+}
+
+Estudiante Gestor::mostrarEstudiantes() {
+	listaEsrudiantes.getLength();
+}

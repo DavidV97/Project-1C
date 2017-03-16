@@ -1,14 +1,14 @@
 ﻿  NodeEstXCurso.cpp
-  NodeEstudiante.cpp
-  NodeCurso.cpp
-  Node.cpp
-  Main.cpp
-  ListaEstudiantes.cpp
-  ListaCursos.cpp
-  Lista.cpp
-  Gestor.cpp
-  Estudiante.cpp
+  ListaEstXCurso.cpp
+  Generating Code...
+  Compiling...
   Curso.cpp
   Generating Code...
-  Project-1.vcxproj -> C:\Users\josep\Desktop\proyecto\Project-1C\x64\Debug\Project-1.exe
-  Project-1.vcxproj -> C:\Users\josep\Desktop\proyecto\Project-1C\x64\Debug\Project-1.pdb (Partial PDB)
+  Compiling...
+  NodeCurso.cpp
+  Main.cpp
+  ListaCursos.cpp
+  Gestor.cpp
+  Generating Code...
+  Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\x64\Debug\Project-1.exe
+  Project-1.vcxproj -> C:\Users\David\Documents\Visual Studio 2017\Projects\Project-1\x64\Debug\Project-1.pdb (Partial PDB)
