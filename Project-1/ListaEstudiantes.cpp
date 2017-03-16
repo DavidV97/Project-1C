@@ -2,35 +2,37 @@
 
 ListaEstudiantes::ListaEstudiantes(){
 	longitud = 0;
-	head = NULL;
+	cabeza = NULL;
 }
 
 void ListaEstudiantes::setLongitud() {
 	longitud++;
 }
 
-int ListaEstudiantes::getLength() const {
-	return longitud;
+int ListaEstudiantes::getLongitud() const {
+	return this->longitud;
 }
 
-void ListaEstudiantes::setHead(NodeEstudiante *phead) {
-	head = phead;
+void ListaEstudiantes::setCabeza(NodeEstudiante *phead) {
+	cabeza = phead;
 }
 
-NodeEstudiante * ListaEstudiantes::getHead() const {
-	return head;
+NodeEstudiante * ListaEstudiantes::getCabeza() const {
+	return cabeza;
 }
 
-void ListaEstudiantes::addEstudiante(Estudiante pestudiante) {
+void ListaEstudiantes::agregarEstudiante(Estudiante pestudiante) {
 
 	NodeEstudiante* node = new NodeEstudiante(pestudiante);
 
-	if (this->head == NULL) {
-		setHead(node);
+	if (this->cabeza == NULL) {
+		setCabeza(node);
+	
 	}
+
 	else {
-		node->setSig(head);
-		setHead(node);
+		node->setSig(cabeza);
+		setCabeza(node);
 	}
 
 	this->setLongitud();
