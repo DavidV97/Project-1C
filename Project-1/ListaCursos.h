@@ -14,7 +14,7 @@ public:
 	NodeCurso *getHead() const;
 	void addCurso(Curso pcurso);
 	bool cursoVacio();
-	string mostrarCurso();
+	string mostrarCursos();
 private:
 	int longitud;
 	NodeCurso *head;

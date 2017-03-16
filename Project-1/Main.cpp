@@ -167,8 +167,14 @@ string obtDia() {
 }
 
 void matricularEst() {
-	Curso curso = Gestor::mostrarCursos();
-	Estudiante estudiente = Gestor::mostrarEstudiantes();
-	Curso *PtrCurso = &curso;
-	Estudiante *PtrEst = &estudiente;
+	string codigoCurso, codigoEst;
+	Gestor::mostrarCursos();
+	cout << "Digite el codigo del curso que quiere matricular" << "\n" << endl;
+	cin >> codigoCurso;
+
+	Gestor::mostrarEstudiantes();
+	cout << "Digite el codigo del estudiante que quiere matricular" << "\n" << endl;
+	cin >> codigoEst;
+
+	cout << Gestor::matricular(codigoCurso, codigoEst) << endl;
 }

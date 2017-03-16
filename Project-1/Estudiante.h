@@ -8,12 +8,15 @@ using namespace std;
 class Estudiante{
 public:
 	Estudiante();
-	void setCodigo(int pcodigo);
+	Estudiante(string pNombre);
+	void setCodigo();
 	string getCodigo();
 	void setNomEstudiante(string pnombre);
 	string getNomEstudiante();
+	string toString();
 
 private:
+	static const int autoGenerate = 0;
 	string codigo;
 	string nombre;
 };

@@ -8,13 +8,19 @@ using namespace std;
 class ListaEstXCurso {
 public:
 	ListaEstXCurso();
-	void setLongitud();
-	int getLength() const;
-	void setHead(NodeEstXCurso *);
-	NodeEstXCurso *getHead() const;
+
+	void setLength();
+	int getLength();
+
+	void setHead(NodeEstXCurso *phead);
+	NodeEstXCurso *getHead();
+
 	void addEstudiante(Estudiante* pestudiante);
+	string showListEstXCurso();
+	string searchEstudiante(string pCodigo);
+	string delEstudiante(string pCodigo);
 private:
-	int longitud;
+	int length;
 	NodeEstXCurso *head;
 };
 #endif // !LISTAESTUDIANTES_H

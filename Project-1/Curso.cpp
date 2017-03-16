@@ -34,13 +34,9 @@ string Curso::getAula() {
 	return this->aula;
 }
 
-/*void Curso::setEstudiantes(Lista pestudiantes){
-	estudiantes = pestudiantes;
+ListaEstXCurso Curso::getEstudiantes(){
+	return this->estXCurso;
 }
-
-Lista Curso::getEstudiantes(){
-	return this->estudiantes;
-}*/
 
 void Curso::setHorario(string phorario) {
 	horario = phorario;
@@ -56,4 +52,13 @@ void Curso::setDia(string pdia) {
 
 string Curso::getDia() {
 	return this->dia;
+}
+
+string Curso::toString(){
+	string result = codigo + "\n";
+	result = nombre + "\n";
+	result = aula + "\n";
+	result = horario + "\n";
+	result = dia + "\n";
+	return result;
 }

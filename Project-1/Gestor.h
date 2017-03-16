@@ -12,8 +12,9 @@ class Gestor{
 public:
 	Gestor();
 	static void addCurso(string codigo, string nombre, string aula, string horario, string dia);
-	static Curso mostrarCursos();
-	static Estudiante mostrarEstudiantes();
+	static string mostrarCursos();
+	static string mostrarEstudiantes();
+	static string matricular(string pCodigoCurso, string pCodigoEst);
 private:
 	static ListaCursos listaCurso;
 	static ListaEstudiantes listaEsrudiantes;

@@ -1,16 +1,25 @@
 #include "Gestor.h"
 
-Gestor::Gestor(){
-}
+Gestor::Gestor(){}
 
 void Gestor::addCurso(string codigo, string nombre, string aula, string horario, string dia) {
 	Curso curso(codigo, nombre, aula, horario,dia);
 }
 
-Curso Gestor::mostrarCursos() {
-	listaCurso.mostrarCurso();
+string Gestor::mostrarCursos() {
+	//string result = listaCurso.mostrarCursos();
+	//return result;
+	return string();
 }
 
-Estudiante Gestor::mostrarEstudiantes() {
-	listaEsrudiantes.getLength();
+string Gestor::mostrarEstudiantes() {
+	//listaEsrudiantes.getLength();
+	return string();
+}
+
+string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
+
+	//Curso *PtrCurso = &curso;
+	//Estudiante *PtrEst = &estudiente;
+	return string();
 }

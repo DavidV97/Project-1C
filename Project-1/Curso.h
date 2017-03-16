@@ -16,19 +16,19 @@ public:
 	string getNomCurso();
 	void setAula(string paula);
 	string getAula();
-	void setEstudiantes(Estudiante* pestudiantes);//add cpp
-	ListaEstXCurso getEstudiantes();//add cpp
+	ListaEstXCurso getEstudiantes();
 	void setHorario(string phorario);
 	string getHorario();
 	void setDia(string pdia);
 	string getDia();
 	bool esvacio();
+	string toString();
 	
 private:
 	string codigo;
 	string nombre;
 	string aula;
-	ListaEstXCurso estudiantes;
+	ListaEstXCurso estXCurso;
 	string horario;
 	string dia;
 

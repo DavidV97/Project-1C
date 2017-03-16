@@ -1,10 +1,18 @@
 #include "Estudiante.h"
 
-Estudiante::Estudiante(){
+Estudiante::Estudiante() {
+
 }
 
-void Estudiante::setCodigo(int pcodigo){
-	codigo = pcodigo;
+Estudiante::Estudiante(string pNombre){
+	setCodigo();
+	setNomEstudiante(pNombre);
+}
+
+void Estudiante::setCodigo(){
+	std::string sAutoGenerate = std::to_string(autoGenerate);
+	codigo = "Est-" + sAutoGenerate;
+	*(int*)&autoGenerate += 1;
 }
 
 string Estudiante::getCodigo(){
@@ -17,5 +25,11 @@ void Estudiante::setNomEstudiante(string pnombre) {
 
 string Estudiante::getNomEstudiante() {
 	return this->nombre;
+}
+
+string Estudiante::toString(){
+	string result = codigo + "\n";
+	result = nombre + "\n";
+	return result;
 }
 

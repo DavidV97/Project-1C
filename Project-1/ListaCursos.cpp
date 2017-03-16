@@ -42,7 +42,7 @@ bool ListaCursos::cursoVacio() {
 	}
 	return false;
 }
-string ListaCursos::mostrarCurso() {
+string ListaCursos::mostrarCursos() {
 	string resul = "";
 	NodeCurso* auxCurso;
 	auxCurso = head;
