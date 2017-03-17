@@ -10,11 +10,17 @@ public:
 	ListaEstudiantes();
 	void setLongitud();
 	int getLongitud() const;
-	void setCabeza(NodeEstudiante *);
-	NodeEstudiante *getCabeza() const;
-	void agregarEstudiante(Estudiante pestudiante);
+	void setHead(NodeEstudiante *);
+	NodeEstudiante *getHead() const;
+
+	void addEstudiante(Estudiante pEstudiante);
+	bool estudianteVacio();
+	string mostrarEstudiantes();
+	string buscarInfoDelEstudiante(string pCodigo);
+	Estudiante buscarEstudiante(string pCodigo);
+	bool seEncuentraEstudiante(string pCodigo);
 private:
 	int longitud;
-	NodeEstudiante *cabeza;
+	NodeEstudiante *head;
 };
 #endif // !LISTAESTUDIANTES_H

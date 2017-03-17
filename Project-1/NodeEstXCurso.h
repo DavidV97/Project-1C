@@ -1,6 +1,5 @@
-#ifndef NODOESTXCURSO_H
-#define NODOESTXCURSO_H
-
+#ifndef NODEESTXCURSO_H
+#define NODEESTXCURSO_H
 #include "Estudiante.h"
 #include<iostream>
 using namespace std;
@@ -26,4 +25,4 @@ private:
 	string estado;
 	Estudiante* estudiante;
 };
-#endif // !NODOESTXCURSO_H
+#endif // !NODEESTXCURSO_H

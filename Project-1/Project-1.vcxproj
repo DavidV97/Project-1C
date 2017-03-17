@@ -82,6 +82,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,22 +116,25 @@
     <ClInclude Include="Estudiante.h" />
     <ClInclude Include="Gestor.h" />
     <ClInclude Include="ListaCursos.h" />
+    <ClInclude Include="ListaCurXEstudiante.h" />
     <ClInclude Include="ListaEstudiantes.h" />
     <ClInclude Include="ListaEstXCurso.h" />
     <ClInclude Include="NodeCurso.h" />
+    <ClInclude Include="NodeCurXEstudiante.h" />
     <ClInclude Include="NodeEstudiante.h" />
     <ClInclude Include="NodeEstXCurso.h" />
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Curso.cpp" />
     <ClCompile Include="Estudiante.cpp" />
     <ClCompile Include="Gestor.cpp" />
     <ClCompile Include="ListaCursos.cpp" />
+    <ClCompile Include="ListaCurXEstudiante.cpp" />
     <ClCompile Include="ListaEstudiantes.cpp" />
     <ClCompile Include="ListaEstXCurso.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NodeCurso.cpp" />
+    <ClCompile Include="NodeCurXEstudiante.cpp" />
     <ClCompile Include="NodeEstudiante.cpp" />
     <ClCompile Include="NodeEstXCurso.cpp" />
   </ItemGroup>

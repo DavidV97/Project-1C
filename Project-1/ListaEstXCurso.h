@@ -24,5 +24,4 @@ private:
 	NodeEstXCurso *head;
 };
 
-#endif // !LISTAESTUDIANTES_H
-
+#endif // !LISTAESTXCURSO_H

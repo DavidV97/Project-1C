@@ -1,17 +1,21 @@
 #include "Curso.h"
 
+int Curso::autoGenerateCur = 1;
+
 Curso::Curso() {}
 
-Curso::Curso(string pcodigo, string pnombre, string paula, string phorario, string pdia){
-	setCodigo(pcodigo);
+Curso::Curso(string pnombre, string paula, string phorario, string pdia){
+	setCodigo();
 	setNomCurso(pnombre);
 	setAula(paula);
 	setHorario(phorario);
 	setDia(pdia);
 }
 
-void Curso::setCodigo(string pcodigo) {
-	codigo = pcodigo;
+void Curso::setCodigo() {
+	std::string sAutoGenerate = std::to_string(autoGenerateCur);
+	codigo = "Cur-" + sAutoGenerate;
+	autoGenerateCur++;
 }
 
 string Curso::getCodigo() {
@@ -55,10 +59,10 @@ string Curso::getDia() {
 }
 
 string Curso::toString(){
-	string result = getCodigo() + "\n";
-	result += getNomCurso() + "\n";
-	result += getAula() + "\n";
-	result += getHorario() + "\n";
-	result += getDia() + "\n";
+	string result = "Codigo: " + getCodigo() + "\n";
+	result += "Nombre: " + getNomCurso() + "\n";
+	result += "Aula: " + getAula() + "\n";
+	result += "Horario: " + getHorario() + "\n";
+	result += "Dia: " + getDia() + "\n";
 	return result;
 }

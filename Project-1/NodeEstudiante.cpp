@@ -13,11 +13,15 @@ NodeEstudiante * NodeEstudiante::getSig() {
 }
 
 void NodeEstudiante::setEstudiante(Estudiante pEstudiante) {
-
 	estudiante = pEstudiante;
 }
 
 Estudiante NodeEstudiante::getEstudiante(void) {
-
 	return estudiante;
+}
+
+string NodeEstudiante::toString(){
+	string resul = "Nombre del estudiante: " + estudiante.getNomEstudiante() + "\n";
+	resul += "Codigo: " + estudiante.getCodigo() + "\n";
+	return resul;
 }

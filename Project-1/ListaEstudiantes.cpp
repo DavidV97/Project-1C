@@ -2,7 +2,7 @@
 
 ListaEstudiantes::ListaEstudiantes(){
 	longitud = 0;
-	cabeza = NULL;
+	head = NULL;
 }
 
 void ListaEstudiantes::setLongitud() {
@@ -13,27 +13,108 @@ int ListaEstudiantes::getLongitud() const {
 	return this->longitud;
 }
 
-void ListaEstudiantes::setCabeza(NodeEstudiante *phead) {
-	cabeza = phead;
+void ListaEstudiantes::setHead(NodeEstudiante *phead) {
+	head = phead;
 }
 
-NodeEstudiante * ListaEstudiantes::getCabeza() const {
-	return cabeza;
+NodeEstudiante * ListaEstudiantes::getHead() const {
+	return head;
 }
 
-void ListaEstudiantes::agregarEstudiante(Estudiante pestudiante) {
+void ListaEstudiantes::addEstudiante(Estudiante pEstudiante) {
 
-	NodeEstudiante* node = new NodeEstudiante(pestudiante);
+	NodeEstudiante* node = new NodeEstudiante(pEstudiante);
 
-	if (this->cabeza == NULL) {
-		setCabeza(node);
-	
+	if (estudianteVacio()) {
+		setHead(node);
 	}
-
 	else {
-		node->setSig(cabeza);
-		setCabeza(node);
+		node->setSig(head);
+		setHead(node);
+	}
+	this->setLongitud();
+}
+
+bool ListaEstudiantes::estudianteVacio() {
+	if (this->head == NULL) {
+		return true;
+	}
+	return false;
+}
+
+string ListaEstudiantes::mostrarEstudiantes() {
+	string resul = "";
+	NodeEstudiante* auxEstudiante;
+	auxEstudiante = this->head;
+	while (auxEstudiante != NULL) {
+		resul += auxEstudiante->toString() + "\n";
+		auxEstudiante = auxEstudiante->getSig();
+	}
+	return resul;
+}
+string ListaEstudiantes::buscarInfoDelEstudiante(string pcodigo) {
+	string resul;
+	NodeEstudiante* auxEstudiante;
+	auxEstudiante = head;
+	Estudiante estudiante = auxEstudiante->getEstudiante();
+	while (auxEstudiante != NULL) {
+		if (estudiante.getCodigo() == pcodigo) {
+			resul = "El curso se encontro sastisfactoriamente \n " + auxEstudiante->toString() + "\n";
+			auxEstudiante = NULL;
+		}
+		else {
+			resul = "El curso que busco no se encuentra registrado!";
+			auxEstudiante = auxEstudiante->getSig();
+			if (auxEstudiante != NULL) {
+				estudiante = auxEstudiante->getEstudiante();
+			}
+
+		}
+
 	}
 
-	this->setLongitud();
+	return resul;
+}
+Estudiante ListaEstudiantes::buscarEstudiante(string pcodigo) {
+	NodeEstudiante* auxEstudiante;
+	auxEstudiante = head;
+	Estudiante estudiante = auxEstudiante->getEstudiante();
+	Estudiante estudianteEncontrado;
+	while (auxEstudiante != NULL) {
+		if (estudiante.getCodigo() == pcodigo) {
+			estudianteEncontrado = auxEstudiante->getEstudiante();
+			auxEstudiante = NULL;
+		}
+		else {
+			auxEstudiante = auxEstudiante->getSig();
+			if (auxEstudiante != NULL) {
+				estudiante = auxEstudiante->getEstudiante();
+			}
+
+		}
+
+	}
+
+	return estudianteEncontrado;
+}
+bool ListaEstudiantes::seEncuentraEstudiante(string pcodigo) {
+	bool resul = false;
+	NodeEstudiante* auxEstudiante;
+	auxEstudiante = head;
+	Estudiante estudiante = auxEstudiante->getEstudiante();
+	Estudiante estudianteEncontrado;
+	while (auxEstudiante != NULL) {
+		if (estudiante.getCodigo() == pcodigo) {
+			auxEstudiante = NULL;
+			return true;
+
+		}
+		else {
+			auxEstudiante = auxEstudiante->getSig();
+			if (auxEstudiante != NULL) {
+				estudiante = auxEstudiante->getEstudiante();
+			}
+		}
+	}
+	return resul;
 }

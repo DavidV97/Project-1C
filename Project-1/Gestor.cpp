@@ -2,9 +2,14 @@
 
 Gestor::Gestor(){}
 
-void Gestor::addCurso(string codigo, string nombre, string aula, string horario, string dia) {
-	Curso curso(codigo, nombre, aula, horario,dia);
+void Gestor::addCurso(string nombre, string aula, string horario, string dia) {
+	Curso curso(nombre, aula, horario,dia);
 	listaCursos.addCurso(curso);
+}
+
+void Gestor::addEstudiante(string pNombre) {
+	Estudiante estudiante(pNombre);
+	listaEstudiantes.addEstudiante(estudiante);
 }
 
 string Gestor::mostrarCursos() {
@@ -18,15 +23,18 @@ void Gestor::buscarCurso(string pcodigo) {
 	if (resul) {
 		Curso curso = listaCursos.buscarCurso(pcodigo);
 	}
-	
 }
+
 bool Gestor::verificarSiHayCursos() {
 	return listaCursos.cursoVacio();
 }
 
+bool Gestor::verificarSiHayEstudiantes() {
+	return listaEstudiantes.estudianteVacio();
+}
+
 string Gestor::mostrarEstudiantes() {
-	//listaEstudiantes.mostrarEstudiantes();
-	return string();
+	return listaEstudiantes.mostrarEstudiantes();
 }
 
 string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
@@ -34,16 +42,50 @@ string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
 	if (listaCursos.seEncuentraCurso(pCodigoCurso)) {
 		Curso curso = listaCursos.buscarCurso(pCodigoCurso);
 		ListaEstXCurso estXCurso = curso.getEstudiantes();
-		//Estudiante estudiante = listaEstudiantes.buscarEstudiante();
-		//Estudiante *PtrEst = &estudiente;
-		//estXCurso.addEstudiante(*PtrEst);
-		//result = generateStrMatricula(curso, estudiante);
-		//result += estudiante.toString();
+		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
+		Estudiante *PtrEst = &estudiante;
+		estXCurso.addEstudiante(PtrEst);
+		ListaCurXEstudiante* curXEstudiantes = estudiante.getCursos();
+		ListaCurXEstudiante iCurXEstudiantes = *curXEstudiantes;
+		Curso *PtrCur = &curso;
+		iCurXEstudiantes.addCurso(PtrCur);
+		
+		result = generateStrMatricula(curso, estudiante);
+		result += estudiante.toString();
 
 	}else {
 		result = "El codigo digitado no corresponde a ningun curso";
 	}
 	
+	return result;
+}
+
+string Gestor::showEstXCurso(string pCodigoCurso){
+	string result;
+	if (listaCursos.seEncuentraCurso(pCodigoCurso)) {
+		Curso curso = listaCursos.buscarCurso(pCodigoCurso);
+		ListaEstXCurso estXCurso = curso.getEstudiantes();
+		result = curso.getCodigo() + "\n" + curso.getNomCurso() + "\n";
+		result += "Estudiantes del curso: \n";
+		result += estXCurso.showListEstXCurso();
+	}else {
+		result = "El codigo digitado no corresponde a ningun curso";
+	}
+	return result;
+}
+
+string Gestor::showCurXEstudiante(string pCodigoEstudiante) {
+	string result;
+	if (listaEstudiantes.seEncuentraEstudiante(pCodigoEstudiante)) {
+		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEstudiante);
+		ListaCurXEstudiante *curXEstudiante = estudiante.getCursos();
+		ListaCurXEstudiante iCurXEstudiante = *curXEstudiante;
+		result = estudiante.getCodigo() + "\n" + estudiante.getNomEstudiante() + "\n";
+		result += "Cursos del estudiante: \n";
+		result += iCurXEstudiante.showListCurXEstudiante();
+	}else {
+		result = "El codigo digitado no corresponde a ningun estudiante";
+	}
 	return result;
 }
 

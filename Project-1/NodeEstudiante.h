@@ -12,6 +12,7 @@ public:
 	NodeEstudiante* getSig();
 	void setEstudiante(Estudiante pEstudiante);
 	Estudiante getEstudiante(void);
+	string toString();
 private:
 	NodeEstudiante* sig;
 	Estudiante estudiante;

@@ -76,7 +76,7 @@ string ListaEstXCurso::searchEstudiante(string pCodigo){
 
 		}
 		if (empty(result)) {
-			result = "El codigo digitado no corresponde a ningun estudiante de curso";
+			result = "El codigo digitado no corresponde a ningun estudiante del curso";
 		}
 	}else {
 		result = "No hay estudiantes registrados en este curso";
@@ -113,7 +113,7 @@ string ListaEstXCurso::delEstudiante(string pCodigo){
 				delete aux;
 				break;
 			}else {
-				result = "El codigo digitado no corresponde a ningun estudiante de curso";
+				result = "El codigo digitado no corresponde a ningun estudiante del curso";
 				auxAnterior = aux;
 				aux = aux->getSig();
 			}

@@ -1,5 +1,7 @@
 #include "Estudiante.h"
 
+int Estudiante::autoGenerateEst = 1;
+
 Estudiante::Estudiante() {
 
 }
@@ -10,9 +12,9 @@ Estudiante::Estudiante(string pNombre){
 }
 
 void Estudiante::setCodigo(){
-	std::string sAutoGenerate = std::to_string(autoGenerate);
+	std::string sAutoGenerate = std::to_string(autoGenerateEst);
 	codigo = "Est-" + sAutoGenerate;
-	*(int*)&autoGenerate += 1;
+	autoGenerateEst++;
 }
 
 string Estudiante::getCodigo(){
@@ -27,9 +29,13 @@ string Estudiante::getNomEstudiante() {
 	return this->nombre;
 }
 
+ListaCurXEstudiante* Estudiante::getCursos(){
+	return this->curXEstudiante;
+}
+
 string Estudiante::toString(){
-	string result = getCodigo() + "\n";
-	result += getNomEstudiante() + "\n";
+	string result = "Codigo: " + getCodigo() + "\n";
+	result += "Nombre: " + getNomEstudiante() + "\n";
 	return result;
 }
 

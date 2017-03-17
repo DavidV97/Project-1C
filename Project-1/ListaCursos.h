@@ -12,6 +12,7 @@ public:
 	int getLength() const;
 	void setHead(NodeCurso *);
 	NodeCurso *getHead() const;
+
 	void addCurso(Curso pcurso);
 	bool cursoVacio();
 	string mostrarCursos();

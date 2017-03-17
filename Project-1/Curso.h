@@ -1,5 +1,6 @@
 #ifndef CURSO_H
 #define CURSO_H
+
 #include "ListaEstXCurso.h"
 #include <iostream>
 #include <string>
@@ -9,8 +10,8 @@ class Curso{
 
 public:
 	Curso();
-	Curso(string pcodigo, string pnombre, string paula, string phorario, string pdia);
-	void setCodigo(string pcodigo);
+	Curso(string pnombre, string paula, string phorario, string pdia);
+	void setCodigo();
 	string getCodigo();
 	void setNomCurso(string pnombre);
 	string getNomCurso();
@@ -21,17 +22,16 @@ public:
 	string getHorario();
 	void setDia(string pdia);
 	string getDia();
-	bool esvacio();
 	string toString();
 	
 private:
+	static int autoGenerateCur;
 	string codigo;
 	string nombre;
 	string aula;
 	ListaEstXCurso estXCurso;
 	string horario;
 	string dia;
-
 };
 
 #endif // !CURSO_H

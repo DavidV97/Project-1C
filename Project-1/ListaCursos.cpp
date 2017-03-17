@@ -1,5 +1,4 @@
 #include "ListaCursos.h"
-#include "NodeCurso.h"
 #include <sstream>
 #include <iostream>
 using namespace std;

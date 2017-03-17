@@ -35,6 +35,8 @@ void mostarMenu() {
 	cout << "3. Matricular estudiante" << "\n" << endl;
 	cout << "4. Mostrar cursos" << "\n" << endl;
 	cout << "5. Buscar Curso" << "\n" << endl;
+	cout << "6. Mostrar estudiantes por curso" << "\n" << endl;
+	cout << "7. Mostrar cursos por estudiante" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
 	cout << "Seleccione una opcion" << "\n" << endl;
 }
@@ -65,45 +67,42 @@ string leerOp() {
 }
 
 bool ejecutarMenu(string opcion) {
-	string estudianteNombre;
 	void obtDatosCurso();
+	void obtDatosEstudiante();
 	void agregarEstudiante();
 	void matricularEst();
 	void mostrarCurso();
 	void buscarCurso();
+	void mostrarEstXCurso();
+	void mostrarCurXEstudiante();
 
 	if (opcion == "1") {
 		obtDatosCurso();
-
 	}else if (opcion == "2") {
-		estudianteNombre=obtenerDatosEstudiante();
-		agregarEstudiante(estudianteNombre);
-
+		obtDatosEstudiante();
 	}else if (opcion == "3") {
 		matricularEst();
-	}
-	else if (opcion == "4") {
+	}else if (opcion == "4") {
 		mostrarCurso();
-	}
-	else if (opcion == "5") {
+	}else if (opcion == "5") {
 		buscarCurso();
-	}
-	else if (opcion == "0") {
+	}else if (opcion == "6") {
+		mostrarEstXCurso();
+	}else if (opcion == "7") {
+		mostrarCurXEstudiante();
+	}else if (opcion == "0") {
 		return false;
-	}
-	else {
+	}else {
 		cout << "Opcion invalida" << "\n" << endl;
 	}
 	return true;
 }
 
 void obtDatosCurso() {
-	string codigo, nombre, aula, horario, dia;
+	string nombre, aula, horario, dia;
 
 	string obtHorario(), obtDia();
 
-	cout << "Codigo del curso" << "\n" << endl;
-	cin >> codigo;
 	cout << "Nombre del curso" << "\n" << endl;
 	cin >> nombre;
 	cout << "Aula del curso" << "\n" << endl;
@@ -112,9 +111,17 @@ void obtDatosCurso() {
 	horario = obtHorario();
 	cout << "Dia del curso" << "\n" << endl;
 	dia = obtDia();
-	gestor.addCurso(codigo, nombre, aula, horario, dia);
+	gestor.addCurso(nombre, aula, horario, dia);
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;
 	
+}
+
+void obtDatosEstudiante() {
+	string nombre;
+	cout << "Nombre completo del estudiante" << "\n" << endl;
+	cin >> nombre;
+	gestor.addEstudiante(nombre);
+	cout << "Estudiante agregado de manera exitosa" << "\n" << endl;
 }
 
 string obtHorario() {
@@ -189,16 +196,50 @@ string obtDia() {
 
 void matricularEst() {
 	string codigoCurso, codigoEst;
-	gestor.mostrarCursos();
-	cout << "Digite el codigo del curso que quiere matricular" << "\n" << endl;
-	cin >> codigoCurso;
+	if (!gestor.verificarSiHayCursos()) {
+		if (!gestor.verificarSiHayCursos()) {
+			cout << gestor.mostrarCursos() << endl;
+			cout << "Digite el codigo del curso que quiere matricular" << "\n" << endl;
+			cin >> codigoCurso;
 
-	gestor.mostrarEstudiantes();
-	cout << "Digite el codigo del estudiante que quiere matricular" << "\n" << endl;
-	cin >> codigoEst;
+			cout << gestor.mostrarEstudiantes() << endl;
+			cout << "Digite el codigo del estudiante que quiere matricular" << "\n" << endl;
+			cin >> codigoEst;
 
-	cout << gestor.matricular(codigoCurso, codigoEst) << endl;
+			cout << gestor.matricular(codigoCurso, codigoEst) << "\n" << endl;
+		}else {
+			cout << "No existen estudiantes" << endl;
+		}
+	}else {
+		cout << "No existen cursos" << endl;
+	}
 }
+
+void mostrarEstXCurso() {
+	string codigoCurso;
+	if (!gestor.verificarSiHayCursos()) {
+		cout << gestor.mostrarCursos() << endl;
+		cout << "Digite el codigo del curso para acceder a los estudiantes" << "\n" << endl;
+		cin >> codigoCurso;
+
+		cout << gestor.showEstXCurso(codigoCurso) << "\n" << endl;
+	}else {
+		cout << "No existen cursos" << endl;
+	}
+}
+void mostrarCurXEstudiante() {
+	string codigoEstudiante;
+	if (!gestor.verificarSiHayCursos()) {
+		cout << gestor.mostrarEstudiantes() << endl;
+		cout << "Digite el codigo del estudiante para acceder a los cursos matriculados" << "\n" << endl;
+		cin >> codigoEstudiante;
+
+		cout << gestor.showCurXEstudiante(codigoEstudiante) << "\n" << endl;
+	}else {
+		cout << "No existen estudiantes" << endl;
+	}
+}
+
 void mostrarCurso() {
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarCursos() << endl;
