@@ -37,6 +37,7 @@ void mostarMenu() {
 	cout << "5. Buscar Curso" << "\n" << endl;
 	cout << "6. Mostrar estudiantes por curso" << "\n" << endl;
 	cout << "7. Mostrar cursos por estudiante" << "\n" << endl;
+	cout << "8. Mostrar lista de estudiantes" << "\n" << endl;
 	cout << "0. Salir" << "\n" << endl;
 	cout << "Seleccione una opcion" << "\n" << endl;
 }
@@ -75,6 +76,7 @@ bool ejecutarMenu(string opcion) {
 	void buscarCurso();
 	void mostrarEstXCurso();
 	void mostrarCurXEstudiante();
+	void mostrarListaEstudiantes();
 
 	if (opcion == "1") {
 		obtDatosCurso();
@@ -90,6 +92,8 @@ bool ejecutarMenu(string opcion) {
 		mostrarEstXCurso();
 	}else if (opcion == "7") {
 		mostrarCurXEstudiante();
+	}else if (opcion == "8") {
+		mostrarListaEstudiantes();
 	}else if (opcion == "0") {
 		return false;
 	}else {
@@ -275,6 +279,15 @@ string obtenerDatosEstudiante() {
 		return nombreEstudiante;
 	}catch (std::string *atrapada) {
 		 std::cout << "Got " << atrapada << std::endl;
+	}
+}
+
+void mostrarListaEstudiantes() {
+	if (!gestor.verificarSiHayEstudiantes()) {
+		cout << gestor.mostrarEstudiantes() << endl;
+	}else {
+		cout << "No hay estudiantes registrados" << endl;
+	
 	}
 }
 
