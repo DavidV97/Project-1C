@@ -15,13 +15,14 @@ public:
 	 Gestor();
 	 void addCurso(string nombre, string aula, string horario, string dia);
 	 void addEstudiante(string pNombre);
-	 string mostrarCursos();
-	 string buscarInfoCurso(string pcodigo);
 	 void buscarCurso(string pcodigo);
 	 bool verificarSiHayCursos();
 	 bool verificarSiHayEstudiantes();
 	 string mostrarEstudiantes();
+
 	 string buscarInfoEstudiante(string pCodigo);
+	 string mostrarCursos();
+	 string buscarInfoCurso(string pcodigo);
 	 string matricular(string pCodigoCurso, string pCodigoEst);
 	 string showEstXCurso(string pCodigoCurso);
 	 string showCurXEstudiante(string pCodigoEstudiante);

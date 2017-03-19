@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
 }
 
 void mostarMenu() {
+
 	cout << "**    Menu    **" << endl;
 	cout << "1. Agregar curso" << endl;
 	cout << "2. Agregar estudiante" << endl;
@@ -81,6 +82,7 @@ bool ejecutarMenu(string opcion) {
 	void buscarEstudiante();
 	void mostrarEstXCurso();
 	void mostrarCurXEstudiante();
+	void mostrarListaEstudiantes();
 
 	if (opcion == "1") {
 		obtDatosCurso();
@@ -100,6 +102,8 @@ bool ejecutarMenu(string opcion) {
 		mostrarEstXCurso();
 	}else if (opcion == "9") {
 		mostrarCurXEstudiante();
+	}else if (opcion == "8") {
+		mostrarListaEstudiantes();
 	}else if (opcion == "0") {
 		return false;
 	}else {
@@ -257,6 +261,7 @@ void mostrarCurso() {
 		cout << "No existen cursos agregados" << endl;
 	}
 }
+
 void buscarCurso() {
 	string codigo;
 	
@@ -282,7 +287,6 @@ void mostrarEstudiante() {
 
 void buscarEstudiante() {
 	string codigo;
-
 	if (!gestor.verificarSiHayEstudiantes()) {
 		cout << gestor.mostrarEstudiantes() << endl;
 		cout << "Ingrese el codigo del estudiante: " << endl;
