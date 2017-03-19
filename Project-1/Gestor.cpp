@@ -3,9 +3,7 @@
 Gestor::Gestor(){}
 
 void Gestor::addCurso(string nombre, string aula, string horario, string dia) {
-	ListaEstXCurso estXCurso = ListaEstXCurso();
 	Curso curso(nombre, aula, horario,dia);
-	curso.setEstudiantes(estXCurso);
 	listaCursos.addCurso(curso);
 }
 

@@ -17,7 +17,6 @@ public:
 	string getNomCurso();
 	void setAula(string paula);
 	string getAula();
-	void setEstudiantes(ListaEstXCurso);
 	ListaEstXCurso getEstudiantes();
 	void setHorario(string phorario);
 	string getHorario();

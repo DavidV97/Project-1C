@@ -82,7 +82,6 @@ bool ejecutarMenu(string opcion) {
 	void buscarEstudiante();
 	void mostrarEstXCurso();
 	void mostrarCurXEstudiante();
-	void mostrarListaEstudiantes();
 
 	if (opcion == "1") {
 		obtDatosCurso();
@@ -102,8 +101,6 @@ bool ejecutarMenu(string opcion) {
 		mostrarEstXCurso();
 	}else if (opcion == "9") {
 		mostrarCurXEstudiante();
-	}else if (opcion == "8") {
-		mostrarListaEstudiantes();
 	}else if (opcion == "0") {
 		return false;
 	}else {

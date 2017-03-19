@@ -38,10 +38,6 @@ string Curso::getAula() {
 	return this->aula;
 }
 
-void Curso::setEstudiantes(ListaEstXCurso pEstXCurso){
-	estXCurso = pEstXCurso;
-}
-
 ListaEstXCurso Curso::getEstudiantes(){
 	return estXCurso;
 }
