@@ -1,10 +1,11 @@
 #ifndef LISTACURXESTUDIANTE_H
 #define LISTACURXESTUDIANTE_H
-#include "Estudiante.h"
+//#include "Estudiante.h"
 #include "NodeCurXEstudiante.h"
 #include<iostream>
 using namespace std;
 
+//class Estudiante;
 class ListaCurXEstudiante {
 public:
 	ListaCurXEstudiante();

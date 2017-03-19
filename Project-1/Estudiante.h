@@ -1,6 +1,6 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
-
+//#include "ListaCurXEstudiante.h"
 #include <iostream>
 #include <string>
 
@@ -15,7 +15,7 @@ public:
 	string getCodigo();
 	void setNomEstudiante(string pnombre);
 	string getNomEstudiante();
-	ListaCurXEstudiante* getCursos();
+	ListaCurXEstudiante& getCursos();
 	string toString();
 
 private:

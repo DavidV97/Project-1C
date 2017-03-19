@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+class ListaEstXCurso;
 class Curso{
 
 public:
@@ -17,6 +17,7 @@ public:
 	string getNomCurso();
 	void setAula(string paula);
 	string getAula();
+	void setEstudiantes(ListaEstXCurso);
 	ListaEstXCurso getEstudiantes();
 	void setHorario(string phorario);
 	string getHorario();

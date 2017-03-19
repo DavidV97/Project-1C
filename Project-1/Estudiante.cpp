@@ -29,8 +29,9 @@ string Estudiante::getNomEstudiante() {
 	return this->nombre;
 }
 
-ListaCurXEstudiante* Estudiante::getCursos(){
-	return this->curXEstudiante;
+ListaCurXEstudiante & Estudiante::getCursos(){
+	ListaCurXEstudiante & rCurXEstudiante = *curXEstudiante;
+	return rCurXEstudiante;
 }
 
 string Estudiante::toString(){
@@ -38,4 +39,3 @@ string Estudiante::toString(){
 	result += "Nombre: " + getNomEstudiante() + "\n";
 	return result;
 }
-

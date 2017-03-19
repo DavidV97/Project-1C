@@ -21,6 +21,7 @@ public:
 	 bool verificarSiHayCursos();
 	 bool verificarSiHayEstudiantes();
 	 string mostrarEstudiantes();
+	 string buscarInfoEstudiante(string pCodigo);
 	 string matricular(string pCodigoCurso, string pCodigoEst);
 	 string showEstXCurso(string pCodigoCurso);
 	 string showCurXEstudiante(string pCodigoEstudiante);

@@ -9,7 +9,7 @@ void NodeEstXCurso::setSig(NodeEstXCurso *psig) {
 }
 
 NodeEstXCurso * NodeEstXCurso::getSig() {
-	return sig;
+	return this->sig;
 }
 
 void NodeEstXCurso::setNota(int pNota){
@@ -17,7 +17,7 @@ void NodeEstXCurso::setNota(int pNota){
 }
 
 int NodeEstXCurso::getNota(){
-	return nota;
+	return this->nota;
 }
 
 void NodeEstXCurso::setEstado(){
@@ -35,18 +35,18 @@ string NodeEstXCurso::getEstado(){
 }
 
 void NodeEstXCurso::setEstudiante(Estudiante* pEstudiante) {
-		estudiante = pEstudiante;
+	estudiante = pEstudiante;
 }
 
-Estudiante* NodeEstXCurso::getEstudiante(void) {
+Estudiante* NodeEstXCurso::getEstudiante() {
 	return estudiante;
 }
 
 string NodeEstXCurso::getDato(void){
 	std::string sNota = to_string(nota);
 	string result = estudiante->toString();
-	result += sNota + "\n";
-	result += estado + "\n";
+	result += "Nota: " + sNota + "\n";
+	result += "Estado" + estado;
 	return result;
 }
 

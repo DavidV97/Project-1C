@@ -38,8 +38,12 @@ string Curso::getAula() {
 	return this->aula;
 }
 
+void Curso::setEstudiantes(ListaEstXCurso pEstXCurso){
+	estXCurso = pEstXCurso;
+}
+
 ListaEstXCurso Curso::getEstudiantes(){
-	return this->estXCurso;
+	return estXCurso;
 }
 
 void Curso::setHorario(string phorario) {

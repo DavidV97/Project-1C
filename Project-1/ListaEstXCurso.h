@@ -17,7 +17,7 @@ public:
 
 	void addEstudiante(Estudiante* pestudiante);
 	string showListEstXCurso();
-	string searchEstudiante(string pCodigo);
+	Estudiante* searchEstudiante(string pCodigo);
 	string delEstudiante(string pCodigo);
 private:
 	int length;

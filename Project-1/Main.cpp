@@ -7,6 +7,8 @@ Gestor gestor;
 
 void initGestores() {
 	gestor = Gestor::Gestor();
+	gestor.addCurso("Patrones","1","Mannana","Lunes");
+	gestor.addEstudiante("Juan");
 }
 
 int main(int argc, char** argv) {
@@ -29,35 +31,37 @@ int main(int argc, char** argv) {
 }
 
 void mostarMenu() {
-	cout << "**    Menu    **" << "\n" << endl;
-	cout << "1. Agregar curso" << "\n" << endl;
-	cout << "2. Agregar estudiante" << "\n" << endl;
-	cout << "3. Matricular estudiante" << "\n" << endl;
-	cout << "4. Mostrar cursos" << "\n" << endl;
-	cout << "5. Buscar Curso" << "\n" << endl;
-	cout << "6. Mostrar estudiantes por curso" << "\n" << endl;
-	cout << "7. Mostrar cursos por estudiante" << "\n" << endl;
-	cout << "0. Salir" << "\n" << endl;
-	cout << "Seleccione una opcion" << "\n" << endl;
+	cout << "**    Menu    **" << endl;
+	cout << "1. Agregar curso" << endl;
+	cout << "2. Agregar estudiante" << endl;
+	cout << "3. Matricular estudiante" << endl;
+	cout << "4. Mostrar cursos" << endl;
+	cout << "5. Buscar Curso" << endl;
+	cout << "6. Mostrar estudiantes" << endl;
+	cout << "7. Buscar estudiantes" << endl;
+	cout << "8. Mostrar estudiantes por curso" << endl;
+	cout << "9. Mostrar cursos por estudiante" << endl;
+	cout << "0. Salir" << endl;
+	cout << "Seleccione una opcion" << endl;
 }
 
 void mostarMenuHorario() {
-	cout << "**  Menu de horarios **" << "\n" << endl;
-	cout << "1. Mañana" << "\n" << endl;
-	cout << "2. Tarde" << "\n" << endl;
-	cout << "3. Noche" << "\n" << endl;
-	cout << "Seleccione una opcion" << "\n" << endl;
+	cout << "**  Menu de horarios **" << endl;
+	cout << "1. Mañana" << endl;
+	cout << "2. Tarde" << endl;
+	cout << "3. Noche" << endl;
+	cout << "Seleccione una opcion" << endl;
 }
 
 void mostarMenuDia() {
-	cout << "**  Menu de dias **" << "\n" << endl;
-	cout << "1. Lunes" << "\n" << endl;
-	cout << "2. Martes" << "\n" << endl;
-	cout << "3. Miercoles" << "\n" << endl;
-	cout << "4. Jueves" << "\n" << endl;
-	cout << "5. Viernes" << "\n" << endl;
-	cout << "6. Sabado" << "\n" << endl;
-	cout << "Seleccione una opcion" << "\n" << endl;
+	cout << "**  Menu de dias **" << endl;
+	cout << "1. Lunes" << endl;
+	cout << "2. Martes" << endl;
+	cout << "3. Miercoles" << endl;
+	cout << "4. Jueves" << endl;
+	cout << "5. Viernes" << endl;
+	cout << "6. Sabado" << endl;
+	cout << "Seleccione una opcion" << endl;
 }
 
 string leerOp() {
@@ -73,6 +77,8 @@ bool ejecutarMenu(string opcion) {
 	void matricularEst();
 	void mostrarCurso();
 	void buscarCurso();
+	void mostrarEstudiante();
+	void buscarEstudiante();
 	void mostrarEstXCurso();
 	void mostrarCurXEstudiante();
 
@@ -87,8 +93,12 @@ bool ejecutarMenu(string opcion) {
 	}else if (opcion == "5") {
 		buscarCurso();
 	}else if (opcion == "6") {
-		mostrarEstXCurso();
+		mostrarEstudiante();
 	}else if (opcion == "7") {
+		buscarEstudiante();
+	}else if (opcion == "8") {
+		mostrarEstXCurso();
+	}else if (opcion == "9") {
 		mostrarCurXEstudiante();
 	}else if (opcion == "0") {
 		return false;
@@ -103,13 +113,13 @@ void obtDatosCurso() {
 
 	string obtHorario(), obtDia();
 
-	cout << "Nombre del curso" << "\n" << endl;
+	cout << "Nombre del curso" << endl;
 	cin >> nombre;
-	cout << "Aula del curso" << "\n" << endl;
+	cout << "Aula del curso" << endl;
 	cin >> aula;
-	cout << "Horario del curso" << "\n" << endl;
+	cout << "Horario del curso" << endl;
 	horario = obtHorario();
-	cout << "Dia del curso" << "\n" << endl;
+	cout << "Dia del curso" << endl;
 	dia = obtDia();
 	gestor.addCurso(nombre, aula, horario, dia);
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;
@@ -118,7 +128,7 @@ void obtDatosCurso() {
 
 void obtDatosEstudiante() {
 	string nombre;
-	cout << "Nombre completo del estudiante" << "\n" << endl;
+	cout << "Nombre completo del estudiante" << endl;
 	cin >> nombre;
 	gestor.addEstudiante(nombre);
 	cout << "Estudiante agregado de manera exitosa" << "\n" << endl;
@@ -199,11 +209,11 @@ void matricularEst() {
 	if (!gestor.verificarSiHayCursos()) {
 		if (!gestor.verificarSiHayCursos()) {
 			cout << gestor.mostrarCursos() << endl;
-			cout << "Digite el codigo del curso que quiere matricular" << "\n" << endl;
+			cout << "Digite el codigo del curso que quiere matricular" << endl;
 			cin >> codigoCurso;
 
 			cout << gestor.mostrarEstudiantes() << endl;
-			cout << "Digite el codigo del estudiante que quiere matricular" << "\n" << endl;
+			cout << "Digite el codigo del estudiante que quiere matricular" << endl;
 			cin >> codigoEst;
 
 			cout << gestor.matricular(codigoCurso, codigoEst) << "\n" << endl;
@@ -219,7 +229,7 @@ void mostrarEstXCurso() {
 	string codigoCurso;
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarCursos() << endl;
-		cout << "Digite el codigo del curso para acceder a los estudiantes" << "\n" << endl;
+		cout << "Digite el codigo del curso para acceder a los estudiantes" << endl;
 		cin >> codigoCurso;
 
 		cout << gestor.showEstXCurso(codigoCurso) << "\n" << endl;
@@ -231,7 +241,7 @@ void mostrarCurXEstudiante() {
 	string codigoEstudiante;
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarEstudiantes() << endl;
-		cout << "Digite el codigo del estudiante para acceder a los cursos matriculados" << "\n" << endl;
+		cout << "Digite el codigo del estudiante para acceder a los cursos matriculados" << endl;
 		cin >> codigoEstudiante;
 
 		cout << gestor.showCurXEstudiante(codigoEstudiante) << "\n" << endl;
@@ -243,11 +253,9 @@ void mostrarCurXEstudiante() {
 void mostrarCurso() {
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarCursos() << endl;
-	}
-	else {
+	}else {
 		cout << "No existen cursos agregados" << endl;
 	}
-	
 }
 void buscarCurso() {
 	string codigo;
@@ -257,25 +265,30 @@ void buscarCurso() {
 		cout << "Ingrese el codigo del curso: " << endl;
 		cin >> codigo;
 		cout << gestor.buscarInfoCurso(codigo) << endl;
-	}
-	else {
+	}else {
 		cout << "No existen cursos agregados" << endl;
 	}
 	
 }
 
-string obtenerDatosEstudiante() {
-
-	string nombreEstudiante;
-	
-	try {
-		cout << "Digite el codigo del curso que quiere matricular" << "\n" << endl;
-		cin >> nombreEstudiante;
-
-		return nombreEstudiante;
-	}catch (std::string *atrapada) {
-		 std::cout << "Got " << atrapada << std::endl;
+void mostrarEstudiante() {
+	if (!gestor.verificarSiHayEstudiantes()) {
+		cout << gestor.mostrarEstudiantes() << endl;
+	}
+	else {
+		cout << "No existen estudiantes" << endl;
 	}
 }
 
+void buscarEstudiante() {
+	string codigo;
 
+	if (!gestor.verificarSiHayEstudiantes()) {
+		cout << gestor.mostrarEstudiantes() << endl;
+		cout << "Ingrese el codigo del estudiante: " << endl;
+		cin >> codigo;
+		cout << gestor.buscarInfoEstudiante(codigo) << endl;
+	}else {
+		cout << "No existen estudiantes" << endl;
+	}
+}

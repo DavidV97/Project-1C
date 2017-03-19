@@ -10,7 +10,7 @@ void ListaEstXCurso::setLength() {
 }
 
 int ListaEstXCurso::getLength() {
-	return length;
+	return this->length;
 }
 
 void ListaEstXCurso::setHead(NodeEstXCurso *phead) {
@@ -18,7 +18,7 @@ void ListaEstXCurso::setHead(NodeEstXCurso *phead) {
 }
 
 NodeEstXCurso * ListaEstXCurso::getHead() {
-	return head;
+	return this->head;
 }
 
 void ListaEstXCurso::addEstudiante(Estudiante* pestudiante) {
@@ -37,10 +37,10 @@ void ListaEstXCurso::addEstudiante(Estudiante* pestudiante) {
 }
 
 string ListaEstXCurso::showListEstXCurso(){
-	NodeEstXCurso* aux;
-	aux = head;
-
 	string result;
+
+	NodeEstXCurso* aux;
+	aux = this->head;
 
 	if (aux != NULL) {
 
@@ -49,40 +49,28 @@ string ListaEstXCurso::showListEstXCurso(){
 			result += aux->getDato() + "\n";
 			aux = aux->getSig();
 		}
-	}
-	else {
+	}else {
 		result = "No hay estudiantes registrados en este curso";
+
 	}
 
 	return result;
 }
 
-string ListaEstXCurso::searchEstudiante(string pCodigo){
+Estudiante* ListaEstXCurso::searchEstudiante(string pCodigo){
 	NodeEstXCurso* aux;
 	aux = head;
 
-	string result;
-
-	if (aux != NULL) {
-
-		while (aux != NULL) {
-
-			if (aux->getCodigoEst() == pCodigo) {
-				result = aux->getDato() + "\n";
-				aux = NULL;
-			}else {
-				aux = aux->getSig();
-			}
-
+	while (aux != NULL) {
+		if (aux->getCodigoEst() == pCodigo) {
+			Estudiante* estudiante = aux->getEstudiante();
+			aux = NULL;
+			return estudiante;
+		}else {
+			aux = aux->getSig();
 		}
-		if (empty(result)) {
-			result = "El codigo digitado no corresponde a ningun estudiante del curso";
-		}
-	}else {
-		result = "No hay estudiantes registrados en este curso";
 	}
-
-	return result;
+	return NULL;
 }
 
 string ListaEstXCurso::delEstudiante(string pCodigo){

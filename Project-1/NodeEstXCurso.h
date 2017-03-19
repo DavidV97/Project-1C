@@ -16,7 +16,7 @@ public:
 	void setEstado();
 	string getEstado();
 	void setEstudiante(Estudiante* pEstudiante);
-	Estudiante* getEstudiante(void);
+	Estudiante* getEstudiante();
 	string getDato();
 	string getCodigoEst();
 private:
