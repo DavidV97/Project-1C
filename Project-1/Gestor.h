@@ -1,10 +1,8 @@
 #ifndef GESTOR_H
 #define GESTOR_H
-
 #include "ListaCursos.h"
 #include "ListaEstudiantes.h"
 #include "ListaEstXCurso.h"
-#include "ListaCurXEstudiante.h"
 #include <iostream>
 #include <string>
 
@@ -26,14 +24,15 @@ public:
 	 string matricular(string pCodigoCurso, string pCodigoEst);
 	 string showEstXCurso(string pCodigoCurso);
 	 string showCurXEstudiante(string pCodigoEstudiante);
-	 string agregarEstudiante(string pNombreEstudiante);
 	 
 private :
-	 Curso curso = Curso::Curso();
-	 Estudiante estudiante = Estudiante::Estudiante();
+	 //Curso curso = Curso::Curso();
+	 //Estudiante estudiante = Estudiante::Estudiante();
+	 //ListaEstXCurso estXCurso;
 	 ListaCursos listaCursos;
 	 ListaEstudiantes listaEstudiantes;
 	 string generateStrMatricula(Curso curso, Estudiante estudiante);
+	 ListaEstXCurso* Gestor::getIListaEXC();
 };
 
 #endif // !GESTOR_H

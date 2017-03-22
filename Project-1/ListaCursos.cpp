@@ -37,6 +37,7 @@ void ListaCursos::addCurso(Curso pcurso) {
 	}
 	this->setLongitud();
 }
+
 bool ListaCursos::cursoVacio() {
 	if (this->head == NULL) {
 		return true;
@@ -58,8 +59,11 @@ string ListaCursos::buscarInfoDelCurso(string pcodigo) {
 	NodeCurso* auxCurso;
 	auxCurso = head;
 	Curso curso = auxCurso->getCurso();
+	string codigo = curso.getCodigo();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
 	while (auxCurso != NULL) {
-		if (curso.getCodigo() == pcodigo) {
+		if (codigo == pcodigo) {
 			resul = "El curso se encontro sastisfactoriamente \n " + auxCurso->toString() + "\n";
 			auxCurso = NULL;
 		}
@@ -81,44 +85,47 @@ Curso ListaCursos::buscarCurso(string pcodigo) {
 	auxCurso = head;
 	Curso curso = auxCurso->getCurso();
 	Curso cursoEncontrado;
+	string codigo = curso.getCodigo();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
 	while (auxCurso != NULL) {
-		if (curso.getCodigo() == pcodigo) {
+		if (codigo == pcodigo) {
 			cursoEncontrado = auxCurso->getCurso();
 			auxCurso = NULL;
-		}
-		else {
+		}else {
 			auxCurso = auxCurso->getSig();
 			if (auxCurso != NULL) {
 				curso = auxCurso->getCurso();
 			}
-
 		}
-
 	}
-
 	return cursoEncontrado;
-
 }
+
 bool ListaCursos::seEncuentraCurso(string pcodigo) {
 	bool resul = false;
 	NodeCurso* auxCurso;
 	auxCurso = head;
 	Curso curso = auxCurso->getCurso();
 	Curso cursoEncontrado;
+	string codigo = curso.getCodigo();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
 	while (auxCurso != NULL) {
-		if (curso.getCodigo() == pcodigo) {
+		if (codigo == pcodigo) {
 			auxCurso = NULL;
 			return true;
-			
-		}
-		else {
+		}else {
 			auxCurso = auxCurso->getSig();
 			if (auxCurso != NULL) {
 				curso = auxCurso->getCurso();
 			}
-
 		}
-
 	}
 	return resul;
+}
+
+string ListaCursos::toUppercase(string pcodigo) {
+	std::transform(pcodigo.begin(), pcodigo.end(), pcodigo.begin(), ::toupper);
+	return pcodigo;
 }

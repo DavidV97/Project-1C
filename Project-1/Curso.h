@@ -1,23 +1,23 @@
 #ifndef CURSO_H
 #define CURSO_H
-
-#include "ListaEstXCurso.h"
 #include <iostream>
+#include <vector>
 #include <string>
 using namespace std;
+
 class ListaEstXCurso;
 class Curso{
-
 public:
 	Curso();
-	Curso(string pnombre, string paula, string phorario, string pdia);
+	Curso(string pnombre, string paula, string phorario, string pdia, ListaEstXCurso* pEstXCur);
 	void setCodigo();
 	string getCodigo();
 	void setNomCurso(string pnombre);
 	string getNomCurso();
 	void setAula(string paula);
 	string getAula();
-	ListaEstXCurso getEstudiantes();
+	void setEstudiantes(ListaEstXCurso*);
+	ListaEstXCurso* getEstudiantes()const;
 	void setHorario(string phorario);
 	string getHorario();
 	void setDia(string pdia);
@@ -29,7 +29,7 @@ private:
 	string codigo;
 	string nombre;
 	string aula;
-	ListaEstXCurso estXCurso;
+	ListaEstXCurso* estXCurso;
 	string horario;
 	string dia;
 };

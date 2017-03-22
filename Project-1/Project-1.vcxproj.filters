@@ -42,12 +42,6 @@
     <ClInclude Include="ListaEstXCurso.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NodeCurXEstudiante.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ListaCurXEstudiante.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Curso.cpp">
@@ -78,12 +72,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ListaEstXCurso.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NodeCurXEstudiante.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ListaCurXEstudiante.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

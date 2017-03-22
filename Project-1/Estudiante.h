@@ -1,28 +1,27 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
-//#include "ListaCurXEstudiante.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
-
-class ListaCurXEstudiante;
+class ListaEstXCurso;
 class Estudiante{
 public:
 	Estudiante();
-	Estudiante(string pNombre);
+	Estudiante(string pNombre, ListaEstXCurso* pCurXEst);
 	void setCodigo();
 	string getCodigo();
 	void setNomEstudiante(string pnombre);
 	string getNomEstudiante();
-	ListaCurXEstudiante& getCursos();
+	void setCursos(ListaEstXCurso*);
+	ListaEstXCurso* getCursos()const;
 	string toString();
 
 private:
 	static int autoGenerateEst;
 	string codigo;
 	string nombre;
-	ListaCurXEstudiante* curXEstudiante;
+	ListaEstXCurso* curXEst;
 };
 
 #endif // !ESTUDIANTE_H

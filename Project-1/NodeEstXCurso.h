@@ -1,28 +1,35 @@
 #ifndef NODEESTXCURSO_H
 #define NODEESTXCURSO_H
+#include "Curso.h"
 #include "Estudiante.h"
-#include<iostream>
+#include <string> 
+#include <iostream>
 using namespace std;
-
 class NodeEstXCurso {
 public:
-	NodeEstXCurso(Estudiante* pEstudiante);
+	NodeEstXCurso(Estudiante*, Curso*);
 
-	void setSig(NodeEstXCurso*);
-	NodeEstXCurso* getSig();
-
-	void setNota(int pNota);
-	int getNota();
-	void setEstado();
-	string getEstado();
-	void setEstudiante(Estudiante* pEstudiante);
+	Curso* getCurso();
 	Estudiante* getEstudiante();
-	string getDato();
+	NodeEstXCurso* getSig();
+	int getNota();
+	string getEstado();
+
+	void setCurso(Curso*);
+	void setEstudiante(Estudiante*);
+	void setSig(NodeEstXCurso*);
+	void setNota(int pNota);
+	void setEstado();
+
+	string getDatoEst();
+	string getDatoCur();
 	string getCodigoEst();
+	string getCodigoCur();
 private:
+	Curso* curso;
+	Estudiante* estudiante;
 	NodeEstXCurso* sig;
 	int nota;
 	string estado;
-	Estudiante* estudiante;
 };
 #endif // !NODEESTXCURSO_H
