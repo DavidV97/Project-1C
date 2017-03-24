@@ -4,13 +4,12 @@ int Curso::autoGenerateCur = 1;
 
 Curso::Curso() {}
 
-Curso::Curso(string pnombre, string paula, string phorario, string pdia, ListaEstXCurso* pEstXCur){
+Curso::Curso(string pnombre, string paula, string phorario, string pdia){
 	setCodigo();
 	setNomCurso(pnombre);
 	setAula(paula);
 	setHorario(phorario);
 	setDia(pdia);
-	setEstudiantes(pEstXCur);
 }
 
 void Curso::setCodigo() {
@@ -37,14 +36,6 @@ void Curso::setAula(string paula) {
 
 string Curso::getAula() {
 	return this->aula;
-}
-
-void Curso::setEstudiantes(ListaEstXCurso * pEstXCur){
-	this->estXCurso = pEstXCur;
-}
-
-ListaEstXCurso* Curso::getEstudiantes()const{
-	return this->estXCurso;
 }
 
 void Curso::setHorario(string phorario) {

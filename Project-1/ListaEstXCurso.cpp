@@ -41,7 +41,7 @@ bool ListaEstXCurso::estXCurVacio() {
 	return false;
 }
 
-string ListaEstXCurso::showListEstXCurso(){
+string ListaEstXCurso::showListEstXCurso(Curso* pCur){
 	string result;
 	NodeEstXCurso* aux;
 	aux = this->head;

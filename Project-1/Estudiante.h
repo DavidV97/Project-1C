@@ -8,20 +8,17 @@ class ListaEstXCurso;
 class Estudiante{
 public:
 	Estudiante();
-	Estudiante(string pNombre, ListaEstXCurso* pCurXEst);
+	Estudiante(string pNombre);
 	void setCodigo();
 	string getCodigo();
 	void setNomEstudiante(string pnombre);
 	string getNomEstudiante();
-	void setCursos(ListaEstXCurso*);
-	ListaEstXCurso* getCursos()const;
 	string toString();
 
 private:
 	static int autoGenerateEst;
 	string codigo;
 	string nombre;
-	ListaEstXCurso* curXEst;
 };
 
 #endif // !ESTUDIANTE_H

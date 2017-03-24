@@ -5,19 +5,16 @@
 #include <string>
 using namespace std;
 
-class ListaEstXCurso;
 class Curso{
 public:
 	Curso();
-	Curso(string pnombre, string paula, string phorario, string pdia, ListaEstXCurso* pEstXCur);
+	Curso(string pnombre, string paula, string phorario, string pdia);
 	void setCodigo();
 	string getCodigo();
 	void setNomCurso(string pnombre);
 	string getNomCurso();
 	void setAula(string paula);
 	string getAula();
-	void setEstudiantes(ListaEstXCurso*);
-	ListaEstXCurso* getEstudiantes()const;
 	void setHorario(string phorario);
 	string getHorario();
 	void setDia(string pdia);
@@ -29,7 +26,6 @@ private:
 	string codigo;
 	string nombre;
 	string aula;
-	ListaEstXCurso* estXCurso;
 	string horario;
 	string dia;
 };

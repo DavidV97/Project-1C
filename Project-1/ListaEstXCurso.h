@@ -17,8 +17,8 @@ public:
 
 	void addMatricula(Estudiante* pEst, Curso* pCur);
 	bool estXCurVacio();
-	string showListEstXCurso();
-	string showListCurXEst();
+	string showListEstXCurso(Curso* pCur);//Enviar curso para ver estudiantes
+	string showListCurXEst();//Enviar Estudiante para ver cursos
 	Estudiante* searchEstudiante(string pCodigo);
 	Curso* searchCurso(string pCodigo);
 	bool seEncuentraEst(string pcodigo);

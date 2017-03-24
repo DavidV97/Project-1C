@@ -26,13 +26,10 @@ public:
 	 string showCurXEstudiante(string pCodigoEstudiante);
 	 
 private :
-	 //Curso curso = Curso::Curso();
-	 //Estudiante estudiante = Estudiante::Estudiante();
-	 //ListaEstXCurso estXCurso;
 	 ListaCursos listaCursos;
 	 ListaEstudiantes listaEstudiantes;
+	 ListaEstXCurso listaEstXCurso;
 	 string generateStrMatricula(Curso curso, Estudiante estudiante);
-	 ListaEstXCurso* Gestor::getIListaEXC();
 };
 
 #endif // !GESTOR_H

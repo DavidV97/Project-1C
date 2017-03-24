@@ -3,28 +3,28 @@
   <Class Name="Curso" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACgDAAAIAaEAAQCQAAABhAIAAAAgAAAAIAgABAAAAAA=</HashCode>
+      <HashCode>ACgDAAAIAaEAEQCQAAABhAIAAAAgAAAAIAgABAAAAAA=</HashCode>
       <FileName>Curso.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Estudiante" Collapsed="true">
+  <Class Name="Estudiante">
     <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAACQAAABBAAAAAAAAAAEAAAAAAAEMCA=</HashCode>
+      <HashCode>AAABAAAAAAAAAACQAAABBAAAAAAAAAgEAAAAAAAFECA=</HashCode>
       <FileName>Estudiante.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gestor" Collapsed="true">
     <Position X="7.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAoAQCAAgAAAFBAAAgIAAAAIAAAAAgAAAgAiACAgA=</HashCode>
+      <HashCode>IAAAgAQCAAgAAABBAAAgIAAAAIAAAAAgAAAgAiACAAA=</HashCode>
       <FileName>Gestor.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ListaCursos" Collapsed="true">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gEAIQAAAgAAEKAAAAAAAAgAAAAAAAAAAAAAgICACAAA=</HashCode>
+      <HashCode>gEAIQAAAkAAEKAAAAAAAAgAAAAAAAAAAAAAgICACAAA=</HashCode>
       <FileName>ListaCursos.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,14 +38,14 @@
   <Class Name="ListaEstudiantes" Collapsed="true">
     <Position X="4" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gEEIwAAAgAAAAAABAAAAJAAAIAAAgAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gEEIwAAAkAAAAAABAAAAJAAAIAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>ListaEstudiantes.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ListaEstXCurso" Collapsed="true">
     <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gEAIAABAgAAEQAABAEAAAAABAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <HashCode>gAAIAABAkAAEQBECIEAAAAABAgAAAAAAAAAABAAgAAA=</HashCode>
       <FileName>ListaEstXCurso.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,7 +73,7 @@
   <Class Name="NodeEstXCurso" Collapsed="true">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAEKAAAAAAAIAQAAgAAAIBQAAAAAAAJkAAAAAAAABA=</HashCode>
+      <HashCode>BAAAKAAAABAgIAUAAgAAAIBQAAAAAAAJkAAAAACBEBA=</HashCode>
       <FileName>NodeEstXCurso.h</FileName>
     </TypeIdentifier>
   </Class>

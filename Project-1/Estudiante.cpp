@@ -4,10 +4,9 @@ int Estudiante::autoGenerateEst = 1;
 
 Estudiante::Estudiante() {}
 
-Estudiante::Estudiante(string pNombre, ListaEstXCurso* pCurXEst){
+Estudiante::Estudiante(string pNombre){
 	setCodigo();
 	setNomEstudiante(pNombre);
-	setCursos(pCurXEst);
 }
 
 void Estudiante::setCodigo(){
@@ -26,14 +25,6 @@ void Estudiante::setNomEstudiante(string pnombre) {
 
 string Estudiante::getNomEstudiante() {
 	return this->nombre;
-}
-
-void Estudiante::setCursos(ListaEstXCurso * pCurXEst){
-	this->curXEst = pCurXEst;
-}
-
-ListaEstXCurso* Estudiante::getCursos()const {
-	return curXEst;
 }
 
 string Estudiante::toString(){
