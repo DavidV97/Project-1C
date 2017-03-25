@@ -301,7 +301,7 @@ void buscarEstudiante() {
 
 void calificarEstudiante() {
 	string codigoEst, codigoCur;
-	int nota, obtNota();
+	int nota;
 	if (!gestor.verificarSiHayEstudiantes()) {
 		cout << gestor.mostrarEstudiantes() << endl;
 		cout << "Ingrese el codigo del estudiante que va a calificar: " << endl;
@@ -310,7 +310,7 @@ void calificarEstudiante() {
 		cout << "Digite el codigo del curso que va a calificar" << endl;
 		cin >> codigoCur;
 		cout << "Digite la nota" << endl;
-		nota = obtNota();
+		cin >> nota;
 		cout << gestor.calificarEst(codigoEst, codigoCur, nota) << endl;
 	}
 	else {
@@ -318,7 +318,7 @@ void calificarEstudiante() {
 	}
 }
 
-int obtNota() {
+/*int obtNota() {
 	int nota;
 	while (true) {
 		cin >> nota;
@@ -331,4 +331,4 @@ int obtNota() {
 		}
 	}
 	return nota;
-}
+}*/
