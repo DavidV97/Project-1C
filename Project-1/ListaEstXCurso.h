@@ -23,7 +23,7 @@ public:
 	Curso searchCurso(string pCodigo);
 	bool seEncuentraEst(string pcodigo);
 	bool seEncuentraCur(string pcodigo);
-	bool ListaEstXCurso::verCalifEstudiante(Estudiante pEst, Curso pCur);
+	bool ListaEstXCurso::ifEncuentraEstudiante(Estudiante pEst, Curso pCur);
 	string califEstudiante(Estudiante pEst, Curso pCur, int pNota);
 	string toUppercase(string pcodigo);
 private:

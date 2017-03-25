@@ -169,7 +169,7 @@ bool ListaEstXCurso::seEncuentraCur(string pcodigo) {
 	return resul;
 }
 
-bool ListaEstXCurso::verCalifEstudiante(Estudiante pEst, Curso pCur) {
+bool ListaEstXCurso::ifEncuentraEstudiante(Estudiante pEst, Curso pCur) {
 	bool result = false;
 	NodeEstXCurso* aux;
 	aux = this->head;

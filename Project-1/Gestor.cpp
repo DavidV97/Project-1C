@@ -47,8 +47,12 @@ string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
 		if (listaEstudiantes.seEncuentraEstudiante(pCodigoEst)) {
 			Curso curso = listaCursos.buscarCurso(pCodigoCurso);
 			Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
-			this->listaEstXCurso.addMatricula(estudiante, curso);
-			result = generateStrMatricula(curso, estudiante);
+			if (!listaEstXCurso.ifEncuentraEstudiante(estudiante, curso)) {
+				this->listaEstXCurso.addMatricula(estudiante, curso);
+				result = generateStrMatricula(curso, estudiante);
+			}else {
+				result = "Error: ya matriculo al estudiante en este curso";
+			}
 		}else {
 			result = "El codigo digitado no corresponde a ningun estudiante";
 		}
@@ -91,7 +95,7 @@ string Gestor::calificarEst(string pCodigoEst, string pCodigoCur, int pNota){
 		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
 		if (listaEstXCurso.seEncuentraCur(pCodigoCur)) {
 			Curso curso = listaCursos.buscarCurso(pCodigoCur);
-			if (listaEstXCurso.verCalifEstudiante(estudiante, curso)) {
+			if (listaEstXCurso.ifEncuentraEstudiante(estudiante, curso)) {
 				result = listaEstXCurso.califEstudiante(estudiante, curso, pNota);
 			}else {
 				result = "El estudiante no esta matriculado en este curso";
