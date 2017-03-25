@@ -7,7 +7,7 @@ Gestor gestor;
 
 void initGestores() {
 	gestor = Gestor::Gestor();
-	gestor.addCurso("Patrones","1","Mannana","Lunes");
+//	gestor.addCurso("Patrones","1","Mannana","Lunes");
 	gestor.addEstudiante("Juan");
 }
 
@@ -112,12 +112,13 @@ bool ejecutarMenu(string opcion) {
 void obtDatosCurso() {
 	string nombre, aula, horario, dia;
 
-	string obtHorario(), obtDia();
+	string obtHorario(), obtDia(),obtenerDato();
 
 	cout << "Nombre del curso" << endl;
-	cin >> nombre;
+	nombre = obtenerDato();
+	
 	cout << "Aula del curso" << endl;
-	cin >> aula;
+	aula =  obtenerDato();
 	cout << "Horario del curso" << endl;
 	horario = obtHorario();
 	cout << "Dia del curso" << endl;
@@ -126,11 +127,21 @@ void obtDatosCurso() {
 	cout << "Curso agregado de manera exitosa" << "\n" << endl;
 	
 }
+string obtenerDato() {
+	string dato;
+	cin >> dato;
+	while(gestor.verificarSiEsVacio(dato)) {
+		cout << "No puede dejar datos en blanco " << "\n" << "Por favor ingrese el dato de nuevo " << endl;
+		cin >> dato;
+
+	}
+	return dato;
+}
 
 void obtDatosEstudiante() {
 	string nombre;
 	cout << "Nombre completo del estudiante" << endl;
-	cin >> nombre;
+	nombre = obtenerDato();
 	gestor.addEstudiante(nombre);
 	cout << "Estudiante agregado de manera exitosa" << "\n" << endl;
 }
@@ -142,7 +153,7 @@ string obtHorario() {
 	while (true) {
 
 		mostarMenuHorario();
-		opcion = leerOp();
+		opcion = obtenerDato();
 
 		if (opcion == "1") {
 			horario = "mañana";
@@ -171,7 +182,7 @@ string obtDia() {
 	while (true) {
 
 		mostarMenuDia();
-		opcion = leerOp();
+		opcion = obtenerDato();
 
 		if (opcion == "1") {
 			dia = "lunes";
@@ -211,11 +222,11 @@ void matricularEst() {
 		if (!gestor.verificarSiHayCursos()) {
 			cout << gestor.mostrarCursos() << endl;
 			cout << "Digite el codigo del curso que quiere matricular" << endl;
-			cin >> codigoCurso;
+			codigoCurso = obtenerDato();
 
 			cout << gestor.mostrarEstudiantes() << endl;
 			cout << "Digite el codigo del estudiante que quiere matricular" << endl;
-			cin >> codigoEst;
+			codigoEst = obtenerDato();
 
 			cout << gestor.matricular(codigoCurso, codigoEst) << "\n" << endl;
 		}else {
@@ -231,7 +242,7 @@ void mostrarEstXCurso() {
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarCursos() << endl;
 		cout << "Digite el codigo del curso para acceder a los estudiantes" << endl;
-		cin >> codigoCurso;
+		codigoCurso = obtenerDato();
 
 		cout << gestor.showEstXCurso(codigoCurso) << "\n" << endl;
 	}else {
@@ -243,7 +254,7 @@ void mostrarCurXEstudiante() {
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarEstudiantes() << endl;
 		cout << "Digite el codigo del estudiante para acceder a los cursos matriculados" << endl;
-		cin >> codigoEstudiante;
+	    codigoEstudiante = obtenerDato();
 
 		cout << gestor.showCurXEstudiante(codigoEstudiante) << "\n" << endl;
 	}else {
@@ -265,7 +276,7 @@ void buscarCurso() {
 	if (!gestor.verificarSiHayCursos()) {
 		cout << gestor.mostrarCursos() << endl;
 		cout << "Ingrese el codigo del curso: " << endl;
-		cin >> codigo;
+		codigo = obtenerDato();
 		cout << gestor.buscarInfoCurso(codigo) << endl;
 	}else {
 		cout << "No existen cursos agregados" << endl;
@@ -287,7 +298,7 @@ void buscarEstudiante() {
 	if (!gestor.verificarSiHayEstudiantes()) {
 		cout << gestor.mostrarEstudiantes() << endl;
 		cout << "Ingrese el codigo del estudiante: " << endl;
-		cin >> codigo;
+		codigo = obtenerDato();
 		cout << gestor.buscarInfoEstudiante(codigo) << endl;
 	}else {
 		cout << "No existen estudiantes" << endl;

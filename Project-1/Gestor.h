@@ -18,7 +18,9 @@ public:
 	 void buscarCurso(string pcodigo);
 	 bool verificarSiHayCursos();
 	 bool verificarSiHayEstudiantes();
+	 bool verificarSiEsVacio(string pdato);
 	 string mostrarEstudiantes();
+
 
 	 string buscarInfoEstudiante(string pCodigo);
 	 string mostrarCursos();
@@ -27,13 +29,14 @@ public:
 	 string showEstXCurso(string pCodigoCurso);
 	 string showCurXEstudiante(string pCodigoEstudiante);
 	 string agregarEstudiante(string pNombreEstudiante);
-	 
+	 string generateStrMatricula(Curso curso, Estudiante estudiante);
 private :
 	 Curso curso = Curso::Curso();
 	 Estudiante estudiante = Estudiante::Estudiante();
 	 ListaCursos listaCursos;
 	 ListaEstudiantes listaEstudiantes;
-	 string generateStrMatricula(Curso curso, Estudiante estudiante);
+
+	
 };
 
 #endif // !GESTOR_H

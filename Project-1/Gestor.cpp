@@ -81,7 +81,7 @@ string Gestor::showEstXCurso(string pCodigoCurso){
 string Gestor::showCurXEstudiante(string pCodigoEstudiante) {
 	string result;
 	if (listaEstudiantes.seEncuentraEstudiante(pCodigoEstudiante)) {
-		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEstudiante);
+		estudiante = listaEstudiantes.buscarEstudiante(pCodigoEstudiante);
 		ListaCurXEstudiante &curXEstudiante = estudiante.getCursos();
 		result = estudiante.getCodigo() + "\n" + estudiante.getNomEstudiante() + "\n";
 		result += "Cursos del estudiante: \n";
@@ -100,6 +100,12 @@ string Gestor::generateStrMatricula(Curso curso, Estudiante estudiante) {
 	result += "-Detalles del estudiante: \n";
 	result += estudiante.toString();
 	return result;
+}
+bool Gestor::verificarSiEsVacio(string pdato) {
+	if (pdato.empty()) {
+		return true;
+	}
+	return false;
 }
 
 string Gestor::agregarEstudiante(string pestudiante) {
