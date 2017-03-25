@@ -85,6 +85,27 @@ string Gestor::showCurXEstudiante(string pCodigoEstudiante) {
 	return result;
 }
 
+string Gestor::calificarEst(string pCodigoEst, string pCodigoCur, int pNota){
+	string result;
+	if (listaEstXCurso.seEncuentraEst(pCodigoEst)) {
+		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
+		if (listaEstXCurso.seEncuentraCur(pCodigoCur)) {
+			Curso curso = listaCursos.buscarCurso(pCodigoCur);
+			if (listaEstXCurso.verCalifEstudiante(estudiante, curso)) {
+				result = listaEstXCurso.califEstudiante(estudiante, curso, pNota);
+			}else {
+				result = "El estudiante no esta matriculado en este curso";
+			}
+			
+		}else {
+			result = "El codigo digitado no corresponde a ningun curso matriculado";
+		}
+	}else {
+		result = "El codigo digitado no corresponde a ningun estudiante matriculado";
+	}
+	return result;
+}
+
 string Gestor::generateStrMatricula(Curso curso, Estudiante estudiante) {
 	string result;
 	result = "**Matricula exitosa **\n";

@@ -169,6 +169,40 @@ bool ListaEstXCurso::seEncuentraCur(string pcodigo) {
 	return resul;
 }
 
+bool ListaEstXCurso::verCalifEstudiante(Estudiante pEst, Curso pCur) {
+	bool result = false;
+	NodeEstXCurso* aux;
+	aux = this->head;
+
+	while (aux != NULL) {
+		if (aux->getCodigoEst() == pEst.getCodigo()) {
+			if (aux->getCodigoCur() == pCur.getCodigo()) {
+				return true;
+			}
+		}
+		aux = aux->getSig();
+	}
+	return result;
+}
+
+string ListaEstXCurso::califEstudiante(Estudiante pEst, Curso pCur,int pNota){
+	string result;
+	NodeEstXCurso* aux;
+	aux = this->head;
+
+	while (aux != NULL) {
+		if (aux->getCodigoEst() == pEst.getCodigo()) {
+			if (aux->getCodigoCur() == pCur.getCodigo()) {
+				aux->setNota(pNota);
+				aux->setEstado();
+				result = "Nota agregada satisfactoriamente";
+			}
+		}
+		aux = aux->getSig();
+	}
+	return result;
+}
+
 string ListaEstXCurso::toUppercase(string pcodigo) {
 	std::transform(pcodigo.begin(), pcodigo.end(), pcodigo.begin(), ::toupper);
 	return pcodigo;

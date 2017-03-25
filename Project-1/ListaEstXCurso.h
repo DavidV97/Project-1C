@@ -17,12 +17,14 @@ public:
 
 	void addMatricula(Estudiante pEst, Curso pCur);
 	bool estXCurVacio();
-	string showListEstXCurso(Curso pCur);//Enviar curso para ver estudiantes
-	string showListCurXEst(Estudiante pEst);//Enviar Estudiante para ver cursos
+	string showListEstXCurso(Curso pCur);
+	string showListCurXEst(Estudiante pEst);
 	Estudiante searchEstudiante(string pCodigo);
 	Curso searchCurso(string pCodigo);
 	bool seEncuentraEst(string pcodigo);
 	bool seEncuentraCur(string pcodigo);
+	bool ListaEstXCurso::verCalifEstudiante(Estudiante pEst, Curso pCur);
+	string califEstudiante(Estudiante pEst, Curso pCur, int pNota);
 	string toUppercase(string pcodigo);
 private:
 	int length;

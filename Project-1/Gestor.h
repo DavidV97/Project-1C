@@ -24,6 +24,7 @@ public:
 	 string matricular(string pCodigoCurso, string pCodigoEst);
 	 string showEstXCurso(string pCodigoCurso);
 	 string showCurXEstudiante(string pCodigoEstudiante);
+	 string calificarEst(string pCodigoEst, string pCodigoCur, int pNota);
 	 
 private :
 	 ListaCursos listaCursos;

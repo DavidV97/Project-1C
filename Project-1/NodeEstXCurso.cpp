@@ -44,11 +44,11 @@ void NodeEstXCurso::setSig(NodeEstXCurso *psig) {
 
 void NodeEstXCurso::setEstado(){
 	if (nota >= 70) {
-		estado = "aprobado";
+		estado = "Aprobado";
 	}else if (nota >= 60) {
-		estado = "aplazado";
+		estado = "Aplazado";
 	}else {
-		estado = "reprobado";
+		estado = "Reprobado";
 	}
 }
 

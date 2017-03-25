@@ -45,6 +45,7 @@ void mostarMenu() {
 	cout << "7. Buscar estudiantes" << endl;
 	cout << "8. Mostrar estudiantes por curso" << endl;
 	cout << "9. Mostrar cursos por estudiante" << endl;
+	cout << "10. Calificar estudiante" << endl;
 	cout << "0. Salir" << endl;
 	cout << "Seleccione una opcion" << endl;
 }
@@ -85,6 +86,7 @@ bool ejecutarMenu(string opcion) {
 	void buscarEstudiante();
 	void mostrarEstXCurso();
 	void mostrarCurXEstudiante();
+	void calificarEstudiante();
 
 	if (opcion == "1") {
 		obtDatosCurso();
@@ -104,6 +106,8 @@ bool ejecutarMenu(string opcion) {
 		mostrarEstXCurso();
 	}else if (opcion == "9") {
 		mostrarCurXEstudiante();
+	}else if (opcion == "10") {
+		calificarEstudiante();
 	}else if (opcion == "0") {
 		return false;
 	}else {
@@ -215,11 +219,9 @@ void matricularEst() {
 			cout << gestor.mostrarCursos() << endl;
 			cout << "Digite el codigo del curso que quiere matricular" << endl;
 			cin >> codigoCurso;
-
 			cout << gestor.mostrarEstudiantes() << endl;
 			cout << "Digite el codigo del estudiante que quiere matricular" << endl;
 			cin >> codigoEst;
-
 			cout << gestor.matricular(codigoCurso, codigoEst) << "\n" << endl;
 		}else {
 			cout << "No existen estudiantes" << endl;
@@ -295,4 +297,38 @@ void buscarEstudiante() {
 	}else {
 		cout << "No existen estudiantes" << endl;
 	}
+}
+
+void calificarEstudiante() {
+	string codigoEst, codigoCur;
+	int nota, obtNota();
+	if (!gestor.verificarSiHayEstudiantes()) {
+		cout << gestor.mostrarEstudiantes() << endl;
+		cout << "Ingrese el codigo del estudiante que va a calificar: " << endl;
+		cin >> codigoEst;
+		cout << gestor.showCurXEstudiante(codigoEst) << "\n" << endl;
+		cout << "Digite el codigo del curso que va a calificar" << endl;
+		cin >> codigoCur;
+		cout << "Digite la nota" << endl;
+		nota = obtNota();
+		cout << gestor.calificarEst(codigoEst, codigoCur, nota) << endl;
+	}
+	else {
+		cout << "No existen estudiantes" << endl;
+	}
+}
+
+int obtNota() {
+	int nota;
+	while (true) {
+		cin >> nota;
+		if (nota >= 0) {
+			if (nota <= 100) {
+				break;
+			}
+		}else {
+			cout << "Recuerde que la nota debe de ser entre 0 y 100" << " Ingrese de nuevo la nota" << endl;
+		}
+	}
+	return nota;
 }
