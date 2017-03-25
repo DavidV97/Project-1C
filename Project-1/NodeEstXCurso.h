@@ -7,16 +7,16 @@
 using namespace std;
 class NodeEstXCurso {
 public:
-	NodeEstXCurso(Estudiante*, Curso*);
+	NodeEstXCurso(Estudiante, Curso);
 
-	Curso* getCurso();
-	Estudiante* getEstudiante();
+	Curso getCurso();
+	Estudiante getEstudiante();
 	NodeEstXCurso* getSig();
 	int getNota();
 	string getEstado();
 
-	void setCurso(Curso*);
-	void setEstudiante(Estudiante*);
+	void setCurso(Curso);
+	void setEstudiante(Estudiante);
 	void setSig(NodeEstXCurso*);
 	void setNota(int pNota);
 	void setEstado();
@@ -26,8 +26,8 @@ public:
 	string getCodigoEst();
 	string getCodigoCur();
 private:
-	Curso* curso;
-	Estudiante* estudiante;
+	Curso curso;
+	Estudiante estudiante;
 	NodeEstXCurso* sig;
 	int nota;
 	string estado;

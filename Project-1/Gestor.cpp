@@ -3,14 +3,12 @@
 Gestor::Gestor(){}
 
 void Gestor::addCurso(string nombre, string aula, string horario, string dia) {
-	Curso curso(nombre, aula, horario,dia, new ListaEstXCurso());
-	ListaEstXCurso* IC = curso.getEstudiantes();
-	cout << &IC << endl;
+	Curso curso(nombre, aula, horario,dia);
 	listaCursos.addCurso(curso);
 }
 
 void Gestor::addEstudiante(string pNombre) {
-	Estudiante estudiante(pNombre, new ListaEstXCurso());
+	Estudiante estudiante(pNombre);
 	listaEstudiantes.addEstudiante(estudiante);
 }
 
@@ -49,22 +47,7 @@ string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
 		if (listaEstudiantes.seEncuentraEstudiante(pCodigoEst)) {
 			Curso curso = listaCursos.buscarCurso(pCodigoCurso);
 			Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
-			ListaEstXCurso* estXCurso = curso.getEstudiantes();
-			ListaEstXCurso* curXEst = estudiante.getCursos();
-
-			estXCurso->addMatricula(&estudiante, &curso);
-			curXEst->addMatricula(&estudiante, &curso);
-
-			cout << &estXCurso << endl;
-			cout << &curXEst << endl;
-
-			cout << estXCurso->showListEstXCurso() << endl;
-			cout << estXCurso->showListCurXEst() << endl;
-
-			cout << curXEst->showListEstXCurso() << endl;
-			cout << curXEst->showListCurXEst() << endl;
-
-
+			this->listaEstXCurso.addMatricula(estudiante, curso);
 			result = generateStrMatricula(curso, estudiante);
 		}else {
 			result = "El codigo digitado no corresponde a ningun estudiante";
@@ -79,14 +62,10 @@ string Gestor::showEstXCurso(string pCodigoCurso){
 	string result;
 	if (listaCursos.seEncuentraCurso(pCodigoCurso)) {
 		Curso curso = listaCursos.buscarCurso(pCodigoCurso);
-
-		ListaEstXCurso* estXCurso = curso.getEstudiantes();
-		cout << &estXCurso << endl;
-
 		result = "Codigo: " + curso.getCodigo() + "\n";
 		result += "Nombre: "+ curso.getNomCurso() + "\n";
 		result += "Estudiantes del curso: \n";
-		//result += estXCurso->showListEstXCurso();
+		result += this->listaEstXCurso.showListEstXCurso(curso);
 	}else {
 		result = "El codigo digitado no corresponde a ningun curso";
 	}
@@ -97,13 +76,9 @@ string Gestor::showCurXEstudiante(string pCodigoEstudiante) {
 	string result;
 	if (listaEstudiantes.seEncuentraEstudiante(pCodigoEstudiante)) {
 		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEstudiante);
-
-		ListaEstXCurso* estXCurso = estudiante.getCursos();
-		cout << &estXCurso << endl;
-
 		result = estudiante.getCodigo() + "\n" + estudiante.getNomEstudiante() + "\n";
 		result += "Cursos del estudiante: \n";
-		//result += estXCurso->showListCurXEst();
+		result += this->listaEstXCurso.showListCurXEst(estudiante);
 	}else {
 		result = "El codigo digitado no corresponde a ningun estudiante";
 	}

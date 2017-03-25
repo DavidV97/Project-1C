@@ -21,7 +21,7 @@ NodeEstXCurso * ListaEstXCurso::getHead() const{
 	return this->head;
 }
 
-void ListaEstXCurso::addMatricula(Estudiante* pEst, Curso* pCur) {
+void ListaEstXCurso::addMatricula(Estudiante pEst, Curso pCur) {
 
 	NodeEstXCurso* node = new NodeEstXCurso(pEst, pCur);
 
@@ -41,13 +41,15 @@ bool ListaEstXCurso::estXCurVacio() {
 	return false;
 }
 
-string ListaEstXCurso::showListEstXCurso(Curso* pCur){
+string ListaEstXCurso::showListEstXCurso(Curso pCur){
 	string result;
 	NodeEstXCurso* aux;
 	aux = this->head;
 	if (aux != NULL) {
 		while (aux != NULL) {
-			result += aux->getDatoEst() + "\n";
+			if (aux->getCodigoCur() == pCur.getCodigo()) {
+				result += aux->getDatoEst() + "\n";
+			}
 			aux = aux->getSig();
 		}
 	}else {
@@ -56,13 +58,15 @@ string ListaEstXCurso::showListEstXCurso(Curso* pCur){
 	return result;
 }
 
-string ListaEstXCurso::showListCurXEst() {
+string ListaEstXCurso::showListCurXEst(Estudiante pEst) {
 	string result;
 	NodeEstXCurso* aux;
 	aux = this->head;
 	if (aux != NULL) {
 		while (aux != NULL) {
-			result += aux->getDatoCur() + "\n";
+			if (aux->getCodigoEst() == pEst.getCodigo()) {
+				result += aux->getDatoCur() + "\n";
+			}
 			aux = aux->getSig();
 		}
 	}
@@ -72,11 +76,11 @@ string ListaEstXCurso::showListCurXEst() {
 	return result;
 }
 
-Estudiante* ListaEstXCurso::searchEstudiante(string pCodigo){
+Estudiante ListaEstXCurso::searchEstudiante(string pCodigo){
 	NodeEstXCurso* aux;
 	aux = head;
-	Estudiante* estudiante = aux->getEstudiante();
-	Estudiante* estEncontrado = NULL;
+	Estudiante estudiante = aux->getEstudiante();
+	Estudiante estEncontrado = NULL;
 	string codigo = aux->getCodigoEst();
 	codigo = toUppercase(codigo);
 	pCodigo = toUppercase(pCodigo);
@@ -94,11 +98,11 @@ Estudiante* ListaEstXCurso::searchEstudiante(string pCodigo){
 	return estEncontrado;
 }
 
-Curso* ListaEstXCurso::searchCurso(string pCodigo) {
+Curso ListaEstXCurso::searchCurso(string pCodigo) {
 	NodeEstXCurso* aux;
 	aux = head;
-	Curso* curso = aux->getCurso();
-	Curso* curEncontrado = NULL;
+	Curso curso = aux->getCurso();
+	Curso curEncontrado;
 	string codigo = aux->getCodigoCur();
 	codigo = toUppercase(codigo);
 	pCodigo = toUppercase(pCodigo);
@@ -121,8 +125,8 @@ bool ListaEstXCurso::seEncuentraEst(string pcodigo) {
 	bool resul = false;
 	NodeEstXCurso* aux;
 	aux = head;
-	Estudiante* estudiante = aux->getEstudiante();
-	Estudiante*  estEncontrado;
+	Estudiante estudiante = aux->getEstudiante();
+	Estudiante estEncontrado;
 	string codigo = aux->getCodigoEst();
 	codigo = toUppercase(codigo);
 	pcodigo = toUppercase(pcodigo);
@@ -145,8 +149,8 @@ bool ListaEstXCurso::seEncuentraCur(string pcodigo) {
 	bool resul = false;
 	NodeEstXCurso* aux;
 	aux = head;
-	Curso* curso = aux->getCurso();
-	Curso* curEncontrado;
+	Curso curso = aux->getCurso();
+	Curso curEncontrado;
 	string codigo = aux->getCodigoCur();
 	codigo = toUppercase(codigo);
 	pcodigo = toUppercase(pcodigo);
