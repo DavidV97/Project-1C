@@ -7,8 +7,10 @@ Gestor gestor;
 
 void initGestores() {
 	gestor = Gestor::Gestor();
-//	gestor.addCurso("Patrones","1","Mannana","Lunes");
+	gestor.addCurso("Patrones","1","Mannana","Lunes");
 	gestor.addEstudiante("Juan");
+	//gestor.addEstudiante("Carlos");
+	//gestor.matricular("Cur-1","Est-1");
 }
 
 int main(int argc, char** argv) {

@@ -44,20 +44,17 @@ string Gestor::buscarInfoEstudiante(string pCodigo) {
 string Gestor::matricular(string pCodigoCurso, string pCodigoEst){
 	string result;
 	if (listaCursos.seEncuentraCurso(pCodigoCurso)) {
-		Curso curso = listaCursos.buscarCurso(pCodigoCurso);
-		ListaEstXCurso estXCurso = curso.getEstudiantes();
-		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
-		estXCurso.addEstudiante(&estudiante);
-		//ListaCurXEstudiante& curXEstudiantes = estudiante.getCursos();
-		//Curso *PtrCur = &curso;
-		//curXEstudiantes.addCurso(PtrCur);
-		
-		result = generateStrMatricula(curso, estudiante);
-
+		if (listaEstudiantes.seEncuentraEstudiante(pCodigoEst)) {
+			Curso curso = listaCursos.buscarCurso(pCodigoCurso);
+			Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEst);
+			this->listaEstXCurso.addMatricula(estudiante, curso);
+			result = generateStrMatricula(curso, estudiante);
+		}else {
+			result = "El codigo digitado no corresponde a ningun estudiante";
+		}
 	}else {
 		result = "El codigo digitado no corresponde a ningun curso";
 	}
-	
 	return result;
 }
 
@@ -65,13 +62,10 @@ string Gestor::showEstXCurso(string pCodigoCurso){
 	string result;
 	if (listaCursos.seEncuentraCurso(pCodigoCurso)) {
 		Curso curso = listaCursos.buscarCurso(pCodigoCurso);
-
-		ListaEstXCurso estXCurso = curso.getEstudiantes();
-
 		result = "Codigo: " + curso.getCodigo() + "\n";
 		result += "Nombre: "+ curso.getNomCurso() + "\n";
 		result += "Estudiantes del curso: \n";
-		result += estXCurso.showListEstXCurso();
+		result += this->listaEstXCurso.showListEstXCurso(curso);
 	}else {
 		result = "El codigo digitado no corresponde a ningun curso";
 	}
@@ -81,11 +75,11 @@ string Gestor::showEstXCurso(string pCodigoCurso){
 string Gestor::showCurXEstudiante(string pCodigoEstudiante) {
 	string result;
 	if (listaEstudiantes.seEncuentraEstudiante(pCodigoEstudiante)) {
-		estudiante = listaEstudiantes.buscarEstudiante(pCodigoEstudiante);
+		Estudiante estudiante = listaEstudiantes.buscarEstudiante(pCodigoEstudiante);
 		ListaCurXEstudiante &curXEstudiante = estudiante.getCursos();
 		result = estudiante.getCodigo() + "\n" + estudiante.getNomEstudiante() + "\n";
 		result += "Cursos del estudiante: \n";
-		result += curXEstudiante.showListCurXEstudiante();
+		result += this->listaEstXCurso.showListCurXEst(estudiante);
 	}else {
 		result = "El codigo digitado no corresponde a ningun estudiante";
 	}
@@ -100,12 +94,6 @@ string Gestor::generateStrMatricula(Curso curso, Estudiante estudiante) {
 	result += "-Detalles del estudiante: \n";
 	result += estudiante.toString();
 	return result;
-}
-bool Gestor::verificarSiEsVacio(string pdato) {
-	if (pdato.empty()) {
-		return true;
-	}
-	return false;
 }
 
 string Gestor::agregarEstudiante(string pestudiante) {

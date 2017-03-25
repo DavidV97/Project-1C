@@ -57,22 +57,21 @@ string ListaEstudiantes::buscarInfoDelEstudiante(string pcodigo) {
 	NodeEstudiante* auxEstudiante;
 	auxEstudiante = head;
 	Estudiante estudiante = auxEstudiante->getEstudiante();
+	string codigo = estudiante.getCodigo();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
 	while (auxEstudiante != NULL) {
-		if (estudiante.getCodigo() == pcodigo) {
+		if (codigo == pcodigo) {
 			resul = "El curso se encontro sastisfactoriamente \n " + auxEstudiante->toString() + "\n";
 			auxEstudiante = NULL;
-		}
-		else {
+		}else {
 			resul = "El curso que busco no se encuentra registrado!";
 			auxEstudiante = auxEstudiante->getSig();
 			if (auxEstudiante != NULL) {
 				estudiante = auxEstudiante->getEstudiante();
 			}
-
 		}
-
 	}
-
 	return resul;
 }
 Estudiante ListaEstudiantes::buscarEstudiante(string pcodigo) {
@@ -80,19 +79,19 @@ Estudiante ListaEstudiantes::buscarEstudiante(string pcodigo) {
 	auxEstudiante = head;
 	Estudiante estudiante = auxEstudiante->getEstudiante();
 	Estudiante estudianteEncontrado;
+	string codigo = estudiante.getCodigo();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
 	while (auxEstudiante != NULL) {
-		if (estudiante.getCodigo() == pcodigo) {
+		if (codigo == pcodigo) {
 			estudianteEncontrado = auxEstudiante->getEstudiante();
 			auxEstudiante = NULL;
-		}
-		else {
+		}else {
 			auxEstudiante = auxEstudiante->getSig();
 			if (auxEstudiante != NULL) {
 				estudiante = auxEstudiante->getEstudiante();
 			}
-
 		}
-
 	}
 
 	return estudianteEncontrado;
@@ -103,13 +102,14 @@ bool ListaEstudiantes::seEncuentraEstudiante(string pcodigo) {
 	auxEstudiante = head;
 	Estudiante estudiante = auxEstudiante->getEstudiante();
 	Estudiante estudianteEncontrado;
+	string codigo = estudiante.getCodigo();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
 	while (auxEstudiante != NULL) {
-		if (estudiante.getCodigo() == pcodigo) {
+		if (codigo == pcodigo) {
 			auxEstudiante = NULL;
 			return true;
-
-		}
-		else {
+		}else {
 			auxEstudiante = auxEstudiante->getSig();
 			if (auxEstudiante != NULL) {
 				estudiante = auxEstudiante->getEstudiante();
@@ -117,4 +117,9 @@ bool ListaEstudiantes::seEncuentraEstudiante(string pcodigo) {
 		}
 	}
 	return resul;
+}
+
+string ListaEstudiantes::toUppercase(string pcodigo) {
+	std::transform(pcodigo.begin(), pcodigo.end(), pcodigo.begin(), ::toupper);
+	return pcodigo;
 }

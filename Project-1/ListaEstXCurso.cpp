@@ -1,8 +1,8 @@
 #include "ListaEstXCurso.h"
 
 ListaEstXCurso::ListaEstXCurso() {
-	length = 0;
-	head = NULL;
+	this->length = 0;
+	this->head = NULL;
 }
 
 void ListaEstXCurso::setLength() {
@@ -17,98 +17,159 @@ void ListaEstXCurso::setHead(NodeEstXCurso *phead) {
 	head = phead;
 }
 
-NodeEstXCurso * ListaEstXCurso::getHead() {
+NodeEstXCurso * ListaEstXCurso::getHead() const{
 	return this->head;
 }
 
-void ListaEstXCurso::addEstudiante(Estudiante* pestudiante) {
+void ListaEstXCurso::addMatricula(Estudiante pEst, Curso pCur) {
 
-	NodeEstXCurso* node = new NodeEstXCurso(pestudiante);
+	NodeEstXCurso* node = new NodeEstXCurso(pEst, pCur);
 
-	if (this->head == NULL) {
-		setHead(node);
-	}
-	else {
+	if (estXCurVacio()) {
+		this->setHead(node);
+	}else {
 		node->setSig(head);
-		setHead(node);
+		this->setHead(node);
 	}
-
 	this->setLength();
 }
 
-string ListaEstXCurso::showListEstXCurso(){
-	string result;
+bool ListaEstXCurso::estXCurVacio() {
+	if (this->head == NULL) {
+		return true;
+	}
+	return false;
+}
 
+string ListaEstXCurso::showListEstXCurso(Curso pCur){
+	string result;
 	NodeEstXCurso* aux;
 	aux = this->head;
-
 	if (aux != NULL) {
-
 		while (aux != NULL) {
-
-			result += aux->getDato() + "\n";
+			if (aux->getCodigoCur() == pCur.getCodigo()) {
+				result += aux->getDatoEst() + "\n";
+			}
 			aux = aux->getSig();
 		}
 	}else {
-		result = "No hay estudiantes registrados en este curso";
-
+		result = "No hay estudiantes matriculados";
 	}
-
 	return result;
 }
 
-Estudiante* ListaEstXCurso::searchEstudiante(string pCodigo){
+string ListaEstXCurso::showListCurXEst(Estudiante pEst) {
+	string result;
 	NodeEstXCurso* aux;
-	aux = head;
-
-	while (aux != NULL) {
-		if (aux->getCodigoEst() == pCodigo) {
-			Estudiante* estudiante = aux->getEstudiante();
-			aux = NULL;
-			return estudiante;
-		}else {
+	aux = this->head;
+	if (aux != NULL) {
+		while (aux != NULL) {
+			if (aux->getCodigoEst() == pEst.getCodigo()) {
+				result += aux->getDatoCur() + "\n";
+			}
 			aux = aux->getSig();
 		}
 	}
-	return NULL;
+	else {
+		result = "No hay cursos matriculados";
+	}
+	return result;
 }
 
-string ListaEstXCurso::delEstudiante(string pCodigo){
-	string result = "";
-	NodeEstXCurso * aux;
-	NodeEstXCurso * auxAnterior;
-	NodeEstXCurso * auxBorrar;
-	NodeEstXCurso * sustituirNodo;
+Estudiante ListaEstXCurso::searchEstudiante(string pCodigo){
+	NodeEstXCurso* aux;
 	aux = head;
-	sustituirNodo = aux = head;
-	
-	if (head != NULL) {
-
-		auxAnterior = aux->getSig();
-
-		if (aux->getCodigoEst() == pCodigo) {
-			setHead(auxAnterior);
-			delete aux;
+	Estudiante estudiante = aux->getEstudiante();
+	Estudiante estEncontrado = NULL;
+	string codigo = aux->getCodigoEst();
+	codigo = toUppercase(codigo);
+	pCodigo = toUppercase(pCodigo);
+	while (aux != NULL) {
+		if (codigo == pCodigo) {
+			estEncontrado = aux->getEstudiante();
 			aux = NULL;
-		}
-		while (aux != NULL) {
-
-			if (aux->getCodigoEst() == pCodigo) {
-				result = "El estudiante se elimino sastifactoriamente del curso";
-				if (auxAnterior->getSig() != NULL) {
-					auxAnterior->setSig(aux->getSig());
-				}
-				delete aux;
-				break;
-			}else {
-				result = "El codigo digitado no corresponde a ningun estudiante del curso";
-				auxAnterior = aux;
-				aux = aux->getSig();
+		}else {
+			aux = aux->getSig();
+			if (aux != NULL) {
+				estudiante = aux->getEstudiante();
 			}
 		}
 	}
-	else {
-		result = "No hay estudiantes registrados en este curso";
+	return estEncontrado;
+}
+
+Curso ListaEstXCurso::searchCurso(string pCodigo) {
+	NodeEstXCurso* aux;
+	aux = head;
+	Curso curso = aux->getCurso();
+	Curso curEncontrado;
+	string codigo = aux->getCodigoCur();
+	codigo = toUppercase(codigo);
+	pCodigo = toUppercase(pCodigo);
+	while (aux != NULL) {
+		if (codigo == pCodigo) {
+			curEncontrado = aux->getCurso();
+			aux = NULL;
+		}
+		else {
+			aux = aux->getSig();
+			if (aux != NULL) {
+				curso = aux->getCurso();
+			}
+		}
 	}
-	return result;
+	return curEncontrado;
+}
+
+bool ListaEstXCurso::seEncuentraEst(string pcodigo) {
+	bool resul = false;
+	NodeEstXCurso* aux;
+	aux = head;
+	Estudiante estudiante = aux->getEstudiante();
+	Estudiante estEncontrado;
+	string codigo = aux->getCodigoEst();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
+	while (aux != NULL) {
+		if (codigo == pcodigo) {
+			aux = NULL;
+			return true;
+		}
+		else {
+			aux = aux->getSig();
+			if (aux != NULL) {
+				estudiante = aux->getEstudiante();
+			}
+		}
+	}
+	return resul;
+}
+
+bool ListaEstXCurso::seEncuentraCur(string pcodigo) {
+	bool resul = false;
+	NodeEstXCurso* aux;
+	aux = head;
+	Curso curso = aux->getCurso();
+	Curso curEncontrado;
+	string codigo = aux->getCodigoCur();
+	codigo = toUppercase(codigo);
+	pcodigo = toUppercase(pcodigo);
+	while (aux != NULL) {
+		if (codigo == pcodigo) {
+			aux = NULL;
+			return true;
+		}
+		else {
+			aux = aux->getSig();
+			if (aux != NULL) {
+				curso = aux->getCurso();
+			}
+		}
+	}
+	return resul;
+}
+
+string ListaEstXCurso::toUppercase(string pcodigo) {
+	std::transform(pcodigo.begin(), pcodigo.end(), pcodigo.begin(), ::toupper);
+	return pcodigo;
 }

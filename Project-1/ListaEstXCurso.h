@@ -1,6 +1,6 @@
 #ifndef LISTAESTXCURSO_H
 #define LISTAESTXCURSO_H
-
+#include <algorithm>
 #include "NodeEstXCurso.h"
 #include<iostream>
 using namespace std;
@@ -13,12 +13,17 @@ public:
 	int getLength();
 
 	void setHead(NodeEstXCurso *phead);
-	NodeEstXCurso *getHead();
+	NodeEstXCurso *getHead()const;
 
-	void addEstudiante(Estudiante* pestudiante);
-	string showListEstXCurso();
-	Estudiante* searchEstudiante(string pCodigo);
-	string delEstudiante(string pCodigo);
+	void addMatricula(Estudiante pEst, Curso pCur);
+	bool estXCurVacio();
+	string showListEstXCurso(Curso pCur);//Enviar curso para ver estudiantes
+	string showListCurXEst(Estudiante pEst);//Enviar Estudiante para ver cursos
+	Estudiante searchEstudiante(string pCodigo);
+	Curso searchCurso(string pCodigo);
+	bool seEncuentraEst(string pcodigo);
+	bool seEncuentraCur(string pcodigo);
+	string toUppercase(string pcodigo);
 private:
 	int length;
 	NodeEstXCurso *head;

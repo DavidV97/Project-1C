@@ -1,6 +1,6 @@
 #ifndef LISTACURSOS_H
 #define LISTACURSOS_H
-
+#include <algorithm>
 #include "NodeCurso.h"
 #include<iostream>
 using namespace std;
@@ -19,6 +19,7 @@ public:
 	string buscarInfoDelCurso(string pcodigo);
 	Curso buscarCurso(string pcodigo);
 	bool seEncuentraCurso(string pcodigo);
+	string toUppercase(string pcodigo);
 private:
 	int longitud;
 	NodeCurso *head;
