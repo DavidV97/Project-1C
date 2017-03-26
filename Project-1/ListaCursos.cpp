@@ -60,22 +60,18 @@ string ListaCursos::buscarInfoDelCurso(string pcodigo) {
 	auxCurso = head;
 	Curso curso = auxCurso->getCurso();
 	string codigo = curso.getCodigo();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (auxCurso != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			resul = "El curso se encontro sastisfactoriamente \n " + auxCurso->toString() + "\n";
 			auxCurso = NULL;
-		}
-		else {
+		}else {
 			resul = "El curso que busco no se encuentra registrado!";
 			auxCurso = auxCurso->getSig();
 			if (auxCurso != NULL) {
 				curso = auxCurso->getCurso();
+				codigo = curso.getCodigo();
 			}
-			
-		}
-			
+		}	
 	}
 
 	return resul;
@@ -86,16 +82,16 @@ Curso ListaCursos::buscarCurso(string pcodigo) {
 	Curso curso = auxCurso->getCurso();
 	Curso cursoEncontrado;
 	string codigo = curso.getCodigo();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (auxCurso != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			cursoEncontrado = auxCurso->getCurso();
 			auxCurso = NULL;
+			break;
 		}else {
 			auxCurso = auxCurso->getSig();
 			if (auxCurso != NULL) {
 				curso = auxCurso->getCurso();
+				codigo = curso.getCodigo();
 			}
 		}
 	}
@@ -109,16 +105,15 @@ bool ListaCursos::seEncuentraCurso(string pcodigo) {
 	Curso curso = auxCurso->getCurso();
 	Curso cursoEncontrado;
 	string codigo = curso.getCodigo();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (auxCurso != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			auxCurso = NULL;
 			return true;
 		}else {
 			auxCurso = auxCurso->getSig();
 			if (auxCurso != NULL) {
 				curso = auxCurso->getCurso();
+				codigo = curso.getCodigo();
 			}
 		}
 	}

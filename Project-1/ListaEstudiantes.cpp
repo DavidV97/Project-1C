@@ -58,10 +58,8 @@ string ListaEstudiantes::buscarInfoDelEstudiante(string pcodigo) {
 	auxEstudiante = head;
 	Estudiante estudiante = auxEstudiante->getEstudiante();
 	string codigo = estudiante.getCodigo();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (auxEstudiante != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			resul = "El curso se encontro sastisfactoriamente \n " + auxEstudiante->toString() + "\n";
 			auxEstudiante = NULL;
 		}else {
@@ -69,6 +67,7 @@ string ListaEstudiantes::buscarInfoDelEstudiante(string pcodigo) {
 			auxEstudiante = auxEstudiante->getSig();
 			if (auxEstudiante != NULL) {
 				estudiante = auxEstudiante->getEstudiante();
+				codigo = estudiante.getCodigo();
 			}
 		}
 	}
@@ -80,16 +79,15 @@ Estudiante ListaEstudiantes::buscarEstudiante(string pcodigo) {
 	Estudiante estudiante = auxEstudiante->getEstudiante();
 	Estudiante estudianteEncontrado;
 	string codigo = estudiante.getCodigo();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (auxEstudiante != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			estudianteEncontrado = auxEstudiante->getEstudiante();
 			auxEstudiante = NULL;
 		}else {
 			auxEstudiante = auxEstudiante->getSig();
 			if (auxEstudiante != NULL) {
 				estudiante = auxEstudiante->getEstudiante();
+				codigo = estudiante.getCodigo();
 			}
 		}
 	}
@@ -103,16 +101,15 @@ bool ListaEstudiantes::seEncuentraEstudiante(string pcodigo) {
 	Estudiante estudiante = auxEstudiante->getEstudiante();
 	Estudiante estudianteEncontrado;
 	string codigo = estudiante.getCodigo();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (auxEstudiante != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			auxEstudiante = NULL;
 			return true;
 		}else {
 			auxEstudiante = auxEstudiante->getSig();
 			if (auxEstudiante != NULL) {
 				estudiante = auxEstudiante->getEstudiante();
+				codigo = estudiante.getCodigo();
 			}
 		}
 	}

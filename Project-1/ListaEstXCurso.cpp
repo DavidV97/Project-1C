@@ -82,16 +82,15 @@ Estudiante ListaEstXCurso::searchEstudiante(string pCodigo){
 	Estudiante estudiante = aux->getEstudiante();
 	Estudiante estEncontrado = NULL;
 	string codigo = aux->getCodigoEst();
-	codigo = toUppercase(codigo);
-	pCodigo = toUppercase(pCodigo);
 	while (aux != NULL) {
-		if (codigo == pCodigo) {
+		if (toUppercase(codigo) == toUppercase(pCodigo)) {
 			estEncontrado = aux->getEstudiante();
 			aux = NULL;
 		}else {
 			aux = aux->getSig();
 			if (aux != NULL) {
 				estudiante = aux->getEstudiante();
+				codigo = aux->getCodigoEst();
 			}
 		}
 	}
@@ -104,10 +103,8 @@ Curso ListaEstXCurso::searchCurso(string pCodigo) {
 	Curso curso = aux->getCurso();
 	Curso curEncontrado;
 	string codigo = aux->getCodigoCur();
-	codigo = toUppercase(codigo);
-	pCodigo = toUppercase(pCodigo);
 	while (aux != NULL) {
-		if (codigo == pCodigo) {
+		if (toUppercase(codigo) == toUppercase(pCodigo)) {
 			curEncontrado = aux->getCurso();
 			aux = NULL;
 		}
@@ -115,6 +112,7 @@ Curso ListaEstXCurso::searchCurso(string pCodigo) {
 			aux = aux->getSig();
 			if (aux != NULL) {
 				curso = aux->getCurso();
+				string codigo = aux->getCodigoCur();
 			}
 		}
 	}
@@ -128,10 +126,8 @@ bool ListaEstXCurso::seEncuentraEst(string pcodigo) {
 	Estudiante estudiante = aux->getEstudiante();
 	Estudiante estEncontrado;
 	string codigo = aux->getCodigoEst();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (aux != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			aux = NULL;
 			return true;
 		}
@@ -139,6 +135,7 @@ bool ListaEstXCurso::seEncuentraEst(string pcodigo) {
 			aux = aux->getSig();
 			if (aux != NULL) {
 				estudiante = aux->getEstudiante();
+				codigo = aux->getCodigoEst();
 			}
 		}
 	}
@@ -152,10 +149,8 @@ bool ListaEstXCurso::seEncuentraCur(string pcodigo) {
 	Curso curso = aux->getCurso();
 	Curso curEncontrado;
 	string codigo = aux->getCodigoCur();
-	codigo = toUppercase(codigo);
-	pcodigo = toUppercase(pcodigo);
 	while (aux != NULL) {
-		if (codigo == pcodigo) {
+		if (toUppercase(codigo) == toUppercase(pcodigo)) {
 			aux = NULL;
 			return true;
 		}
@@ -163,6 +158,7 @@ bool ListaEstXCurso::seEncuentraCur(string pcodigo) {
 			aux = aux->getSig();
 			if (aux != NULL) {
 				curso = aux->getCurso();
+				codigo = aux->getCodigoCur();
 			}
 		}
 	}
